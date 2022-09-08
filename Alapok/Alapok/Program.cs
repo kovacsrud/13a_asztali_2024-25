@@ -37,9 +37,40 @@ namespace Alapok
             Console.WriteLine(Int64.MaxValue);
 
             //Nem egész számokat tároló változók (lebegőpontos)
-            float nemEgesz1 = 12.234544f;
-            double nemEgesz2 = 12.4534553665;
-            decimal nemEgesz3 = 12.53454534554m;
+            float nemEgesz1 = 12.123456789012345678901234567890f;
+            double nemEgesz2 = 12.123456789012345678901234567890;
+            decimal nemEgesz3 = 12.123456789012345678901234567890m;
+
+            Console.WriteLine($"Float:{nemEgesz1}");
+            Console.WriteLine($"Double:{nemEgesz2}");
+            Console.WriteLine($"Decimal:{nemEgesz3}");
+
+            //Szöveg
+            string szoveg = "Valami szöveg";
+            Console.WriteLine(szoveg.Length);
+            Console.WriteLine(szoveg[szoveg.Length-1]);
+            Console.WriteLine(szoveg.First());
+            Console.WriteLine(szoveg.Last());
+
+            //A string típusú változó nem változtatható meg.
+
+            szoveg = "Másik szöveg";
+            Console.WriteLine(szoveg);
+
+            //Karakter típus: egyetlen karakter
+            char karakter = 'x';
+
+            Console.WriteLine(karakter);
+
+            //logikai típus
+            bool logikai = true;
+
+            logikai = false;
+            //vagy
+            logikai = !logikai;
+
+            Console.WriteLine(logikai);
+
 
 
 
