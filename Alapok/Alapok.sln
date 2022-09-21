@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stringek", "Stringek\String
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Input", "Input\Input.csproj", "{7D0DDFF0-9A17-45C4-929F-A2CD2F8E4762}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ciklusok", "ciklusok\ciklusok.csproj", "{72BC37C7-EC8B-45D2-BE0D-937F70C0990E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7D0DDFF0-9A17-45C4-929F-A2CD2F8E4762}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D0DDFF0-9A17-45C4-929F-A2CD2F8E4762}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D0DDFF0-9A17-45C4-929F-A2CD2F8E4762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72BC37C7-EC8B-45D2-BE0D-937F70C0990E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BC37C7-EC8B-45D2-BE0D-937F70C0990E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72BC37C7-EC8B-45D2-BE0D-937F70C0990E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72BC37C7-EC8B-45D2-BE0D-937F70C0990E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
