@@ -33,7 +33,7 @@ namespace TombAlapmuveletek
             }
 
             Console.WriteLine();
-            Console.WriteLine($"Az elemek összege:{osszeg},Átlag:{osszeg/szamok.Length}");
+            Console.WriteLine($"Az elemek összege:{osszeg},Átlag:{(double)osszeg/szamok.Length}");
 
             int min = szamok[0];
             int max = szamok[0];
