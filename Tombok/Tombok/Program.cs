@@ -24,6 +24,9 @@ namespace Tombok
             }
 
             int[] masikSzamok = { 12, 45, 59, 112, 67, 334, 99, 677 };
+           
+
+           
 
             for (int i = 0; i < masikSzamok.Length; i++)
             {
@@ -37,18 +40,38 @@ namespace Tombok
                 
             }
 
+            Console.WriteLine();
+
             int[] harmadikSzamok = masikSzamok;
 
             harmadikSzamok[1] = 233;
+            
+            int[] negyedikSzamok = { 12, 233, 59, 112, 67, 334, 99, 677 };
+
+            if (negyedikSzamok==harmadikSzamok)
+            {
+                Console.WriteLine("Egyenlőek");
+            } else
+            {
+                Console.WriteLine("Nem egyenlőek");
+            }
+
 
             Console.WriteLine($"Masodik:{masikSzamok[1]},Harmadik:{harmadikSzamok[1]}");
 
+            
             int a = 7;
             int b = a;
 
             b = 14;
 
             Console.WriteLine($"A:{a},B:{b}");
+
+            //Érték típusoknál összehasonlításkor az értékek kerülnek összehasonlításra
+            //Referencia típusoknál a mutatók kerülnek összehasonlításra.
+
+
+
 
             Console.ReadKey();
         }
