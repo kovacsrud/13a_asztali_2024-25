@@ -53,6 +53,8 @@ namespace TombAlapmuveletek
             Console.WriteLine($"Min:{min},Max:{max}");
 
             Console.WriteLine($"Össz:{szamok.Sum()},Átlag:{szamok.Average()},Min:{szamok.Min()},Max:{szamok.Max()}");
+            
+
 
             Console.ReadKey();
         }

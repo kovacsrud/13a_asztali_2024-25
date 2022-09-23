@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tombok", "Tombok\Tombok.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TombAlapmuveletek", "TombAlapmuveletek\TombAlapmuveletek.csproj", "{2E8ABD5D-AD80-406B-B4A1-E7E08F38F169}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Debug", "Debug\Debug.csproj", "{44D62EFA-1839-4098-A924-693B727F4C86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2E8ABD5D-AD80-406B-B4A1-E7E08F38F169}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E8ABD5D-AD80-406B-B4A1-E7E08F38F169}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E8ABD5D-AD80-406B-B4A1-E7E08F38F169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D62EFA-1839-4098-A924-693B727F4C86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D62EFA-1839-4098-A924-693B727F4C86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D62EFA-1839-4098-A924-693B727F4C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D62EFA-1839-4098-A924-693B727F4C86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
