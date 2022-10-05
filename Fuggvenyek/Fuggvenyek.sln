@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fuggvenyek", "Fuggvenyek\Fu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeruletTerulet", "KeruletTerulet\KeruletTerulet.csproj", "{68232E8D-A991-41B3-8918-4824869EEB91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomblista", "Tomblista\Tomblista.csproj", "{561DDC47-2DB0-4E3B-BB1B-8059415431E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{68232E8D-A991-41B3-8918-4824869EEB91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68232E8D-A991-41B3-8918-4824869EEB91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68232E8D-A991-41B3-8918-4824869EEB91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{561DDC47-2DB0-4E3B-BB1B-8059415431E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561DDC47-2DB0-4E3B-BB1B-8059415431E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561DDC47-2DB0-4E3B-BB1B-8059415431E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561DDC47-2DB0-4E3B-BB1B-8059415431E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
