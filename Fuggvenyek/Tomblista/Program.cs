@@ -18,15 +18,26 @@ namespace Tomblista
         static void Main(string[] args)
         {
             int[] szamok = { 12, 34, 56, 221, 556, 23, 889, 122, 67, 98 };
+            int[] szamok2 = { 23, 56, 78, 12, 345, 677 };
+
+
 
             //Listázzuk ki az elemeket
-            //for (int i = 0; i < szamok.Length; i++)
-            //{
-            //    Console.WriteLine(szamok[i]);
-            //}
+
+            ListTomb(szamok);
+
             Tomblistazas(szamok);
+            Tomblistazas(szamok2);
 
             Console.ReadKey();
+        }
+
+        private static void ListTomb(int[] szamok)
+        {
+            for (int i = 0; i < szamok.Length; i++)
+            {
+                Console.WriteLine(szamok[i]);
+            }
         }
     }
 }
