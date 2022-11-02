@@ -42,6 +42,13 @@ namespace LottoLista
             Console.Write("Tippek:");
             ElemLista(tippek);
 
+            int hetek = 0;
+            //Itt indul a ciklus
+            while (talalat!=5)
+            {
+
+                talalat = 0;   
+
             //Sorsolás - választunk a sorsoloGomb listából véletlenszerűen és a kiválasztott
             //értéket áttesszük a nyerőszámok közé
 
@@ -53,8 +60,10 @@ namespace LottoLista
                 sorsoloGomb.RemoveAt(index);
                 
             }
-            Console.Write("Nyerőszámok:");
-            ElemLista(nyeroSzamok);
+
+            
+            //Console.Write("Nyerőszámok:");
+            //ElemLista(nyeroSzamok);
 
 
             for (int i = 0; i < tippek.Count; i++)
@@ -65,8 +74,17 @@ namespace LottoLista
                 }
             }
 
-            Console.WriteLine($"Találatok:{talalat}");
+                //Vissza kell tenni a nyeroszamokat a "sorsoló gömbbe"
+                sorsoloGomb.AddRange(nyeroSzamok);
+                nyeroSzamok.Clear();
 
+            Console.WriteLine($"Találatok:{talalat}");
+            
+            hetek++;
+
+         }
+
+            Console.WriteLine($"Hetek száma:{hetek}, évben:{hetek/52}");
             Console.ReadKey();
         }
 
