@@ -12,6 +12,8 @@ namespace Lotto
         {
             int osszSzam = 0;
             int hanySzam = 0;
+            int talalat = 0;
+            Random rand = new Random();
 
             Console.Write("Hány számot húzunk?:");
             hanySzam = Convert.ToInt32(Console.ReadLine());
@@ -36,8 +38,49 @@ namespace Lotto
                 }
                 tippek[i] = temp;
             }
-
+            Console.Write("Tippek:");
+            Array.Sort(tippek);
             Tomblista(tippek);
+
+            //Sorsolás
+            for (int i = 0; i < hanySzam; i++)
+            {
+                int temp = rand.Next(1, osszSzam + 1);
+                while (nyeroSzamok.Contains(temp))
+                {
+                    temp = rand.Next(1, osszSzam + 1);
+                }
+                nyeroSzamok[i] = temp;
+            }
+
+            //for (int i = 0; i < tippek.Length; i++)
+            //{
+            //    for (int j = 0; j < nyeroSzamok.Length; j++)
+            //    {
+            //        if (tippek[i]==nyeroSzamok[j])
+            //        {
+            //            talalat++;
+            //        }
+            //    }
+
+            //}
+
+            for (int i = 0; i < tippek.Length; i++)
+            {
+                if (nyeroSzamok.Contains(tippek[i]))
+                {
+                    talalat++;
+                }
+            }
+
+
+            Console.Write("Nyerőszámok:");
+            Array.Sort(nyeroSzamok);
+            Tomblista(nyeroSzamok);
+
+            Console.WriteLine($"Találatok:{talalat}");
+
+            //Találatok meghatározása
 
             Console.ReadKey();
         }
