@@ -8,29 +8,53 @@ namespace KarakterManipulacio
 {
     class Program
     {
-        static void Main(string[] args)
+        static string Fordit2(string szoveg)
         {
-            string szoveg = "Valami szöveg";
             char[] szovegChar = szoveg.ToCharArray();
-
             for (int i = 0; i < szovegChar.Length; i++)
             {
-                if (szovegChar[i]=='a')
+                if (i==0 || (Char.IsWhiteSpace(szovegChar[i-1]) && i>0))
                 {
-                    szovegChar[i] = 'b';
+                    szovegChar[i] = Char.ToUpper(szovegChar[i]);
                 }
-               
+                else
+                {
+                    szovegChar[i] = Char.ToLower(szovegChar[i]);
+                }
             }
+            return new string(szovegChar);
+        }
+        static string Fordit(string szoveg)
+        {
+            char[] szovegChar = szoveg.ToCharArray();
+            for (int i = 0; i < szovegChar.Length; i++)
+            {
+                if (Char.IsLower(szovegChar[i]))
+                {
+                    szovegChar[i] = Char.ToUpper(szovegChar[i]);
+                }
+                else
+                {
+                    szovegChar[i] = Char.ToLower(szovegChar[i]);
+                }
+            }
+            return new string(szovegChar);
+        }
+        static void Main(string[] args)
+        {
+            string szoveg = "Valami Szöveg";
+                    
+            Console.WriteLine(Fordit(szoveg));
 
-            szoveg = new string(szovegChar);
-            Console.WriteLine(szoveg);
+            string masikSzoveg = "boldog hétfőt neked!";
+            Console.WriteLine(Fordit2(masikSzoveg));
 
             //A foreach-ben nem lehet módosítani az adatokat!
             //foreach (var i in szoveg)
             //{
             //    Console.WriteLine(i);
             //}
-
+           
             Console.ReadKey();
         }
     }
