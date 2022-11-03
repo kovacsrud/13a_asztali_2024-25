@@ -8,6 +8,19 @@ namespace KarakterManipulacio
 {
     class Program
     {
+        static int Osszeg(string szoveg)
+        {
+            int osszeg = 0;
+            char[] szovegChar = szoveg.ToCharArray();
+            for (int i = 0; i < szovegChar.Length; i++)
+            {
+                if (Char.IsDigit(szovegChar[i]))
+                {
+                    osszeg = osszeg + (int)Char.GetNumericValue(szovegChar[i]);
+                }
+            }
+            return osszeg;
+        }
         static string Fordit2(string szoveg)
         {
             char[] szovegChar = szoveg.ToCharArray();
@@ -48,6 +61,8 @@ namespace KarakterManipulacio
 
             string masikSzoveg = "boldog hétfőt neked!";
             Console.WriteLine(Fordit2(masikSzoveg));
+
+            Console.WriteLine(Osszeg("Valami 999"));
 
             //A foreach-ben nem lehet módosítani az adatokat!
             //foreach (var i in szoveg)
