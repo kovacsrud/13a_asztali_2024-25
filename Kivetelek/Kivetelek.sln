@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kivetelek", "Kivetelek\Kivetelek.csproj", "{DCA36E3E-46CE-4E12-9543-CC40E8FAD723}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCA36E3E-46CE-4E12-9543-CC40E8FAD723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA36E3E-46CE-4E12-9543-CC40E8FAD723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA36E3E-46CE-4E12-9543-CC40E8FAD723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCA36E3E-46CE-4E12-9543-CC40E8FAD723}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29D4C9FF-A1B0-4187-A037-30DCAB543D73}
+	EndGlobalSection
+EndGlobal
