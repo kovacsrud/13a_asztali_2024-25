@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Osztalyok
 {
-    class Auto
+    public class Auto
     {
        private string rendszam;
        private string marka;

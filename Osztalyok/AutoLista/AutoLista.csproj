@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8618130A-2D13-4D80-959C-294487371B9F}</ProjectGuid>
+    <ProjectGuid>{028A6656-631E-4FA8-833F-CA056F17F4DE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Osztalyok</RootNamespace>
-    <AssemblyName>Osztalyok</AssemblyName>
+    <RootNamespace>AutoLista</RootNamespace>
+    <AssemblyName>AutoLista</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JobbAuto1.cs" />
-    <Compile Include="JobbAuto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Osztalyok\Osztalyok.csproj">
+      <Project>{8618130a-2d13-4d80-959c-294487371b9f}</Project>
+      <Name>Osztalyok</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
