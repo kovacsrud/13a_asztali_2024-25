@@ -16,6 +16,7 @@ namespace Fajlkezeles
             {
                 FileStream fajl = new FileStream("felfedezesek.csv", FileMode.Open);
                 StreamReader reader = new StreamReader(fajl, Encoding.Default);
+                reader.ReadLine();
                 while (!reader.EndOfStream)
                 {
                     //Itt dolgozzuk fel valamilyen módon a sor adatait

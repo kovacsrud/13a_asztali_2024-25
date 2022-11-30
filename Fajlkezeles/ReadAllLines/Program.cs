@@ -42,6 +42,21 @@ namespace ReadAllLines
 
             Console.WriteLine($"Az elemek darabszáma:{elemek.Count}");
 
+            var okoriak = elemek.FindAll(x => x.Ev == "Ókor");
+
+            foreach (var i in okoriak)
+            {
+                Console.WriteLine($"{i.Ev},{i.ElemNev},{i.Vegyjel},{i.Rendszam},{i.Felfedezo}");
+            }
+
+            var abetusek = elemek.FindAll(x => x.Vegyjel.StartsWith("A"));
+
+            foreach (var i in abetusek)
+            {
+                Console.WriteLine($"{i.Ev},{i.ElemNev},{i.Vegyjel},{i.Rendszam},{i.Felfedezo}");
+            }
+
+
             Console.ReadKey();
         }
     }
