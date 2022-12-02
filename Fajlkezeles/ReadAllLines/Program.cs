@@ -56,6 +56,22 @@ namespace ReadAllLines
                 Console.WriteLine($"{i.Ev},{i.ElemNev},{i.Vegyjel},{i.Rendszam},{i.Felfedezo}");
             }
 
+            try
+            {
+                FileStream fajl = new FileStream("abetusek.txt", FileMode.Create);
+                StreamWriter writer = new StreamWriter(fajl, Encoding.Default);
+                foreach (var i in abetusek)
+                {
+                    writer.WriteLine($"{i.Ev};{i.ElemNev};{i.Vegyjel};{i.Rendszam};{i.Felfedezo}");
+                }
+
+                writer.Close();
+                Console.WriteLine("Írás kész!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);                
+            }
 
             Console.ReadKey();
         }
