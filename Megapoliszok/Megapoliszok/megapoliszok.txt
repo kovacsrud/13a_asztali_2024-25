@@ -1,0 +1,56 @@
+orszag;varos;nepesseg1;nepesseg2
+Thaiföld;Bangkok;14626225;5696409
+India;Bengaluru;11695110;8443675
+Kolumbia;Bogotá;9286225;7150000
+Argentína;Buenos Aires;13074000;3063728
+Egyesült Államok;Chicago;9866910;2722389
+Kína;Csangcsou;11400000;3570000
+Kína;Csengcsou;9700000;7005000
+Kína;Csengtu;18100000;11050000
+India;Csennai;10800253;8696000
+Kína;Csinan;11000000;3250000
+Kína;Csingtao;9600000;5775000
+Kína;Csungking;17000000;7990000
+Banglades;Dakka;17151925;8906039
+India;Delhi;21753486;12800000
+Kína;Hangcsou;13400000;9468000
+Kína;Harbin;10500000;5015000
+Kína;Hszian;12900000;5740000
+Törökország;Isztambul;15067724;11343220
+Indonézia;Jakarta;31689592;10348348
+Dél-Afrika;Johannesburg;9616000;4434827
+Egyiptom;Kairó;20500000;9293612
+Kína;Kanton;25000000;13080500
+Pakisztán;Karacsi;16900000;14910352
+Kongói Demokratikus Köztársaság;Kinshasa;12350000;7855000
+India;Kolkata;14617882;4496694
+Pakisztán;Lahor;11070000;10665000
+Peru;Lima;9886647;8380300
+Egyesült Királyság;London;17587146;8908081
+Egyesült Államok;Los Angeles;18764814;3976322
+Fülöp-szigetek;Manila;29300000;1780148
+Mexikó;Mexikóváros;21650668;8851080
+Olaszország;Milánó;8773176;1351562
+Oroszország;Moszkva;16855000;12500123
+India;Mumbai;20748395;12442373
+Japán;Nagoja;9107000;2325918
+Kína;Nanking;11700000;6320000
+Egyesült Államok;New York;23522861;8398748
+Nigéria Lagos;Nigéria;21000000;7937932
+Japán;Oszaka;16800000;2740202
+Franciaország;Párizs;15868755;2187526
+Kína;Peking;24900000;15380000
+Brazília;Rio de Janeiro;12330186;6520266
+Németország;Ruhr-vidék;11471732;10125998
+Brazília;São Paulo;21500000;12106920
+Egyesült Államok;San Francisco;8841475;805235
+Kína;Sanghaj;34000000;23390000
+Kína;Santou;12000000;5319028
+Kína;Sencsen;23300000;11908400
+Indonézia;Surabaya;13123948;4975000
+Dél-Korea;Szöul;25514000;9806538
+Irán;Teherán;14595904;8846782
+Kína;Tiencsin;15400000;12491300
+Japán;Tokió;37868229;13942856
+Kína;Vuhan;19000000;11895000
+Egyesült Államok;Washington;9797063;672228
