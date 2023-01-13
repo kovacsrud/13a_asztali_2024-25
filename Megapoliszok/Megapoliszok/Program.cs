@@ -58,6 +58,49 @@ namespace Megapoliszok
                 Console.WriteLine("Budapest nincs a listán");
             }
 
+            //Statisztika készítése
+            var stat = varosok.ToLookup(x=>x.Orszag).OrderBy(x=>x.Key);
+
+            foreach (var i in stat)
+            {
+                if (i.Count()>2)
+                {
+                    Console.WriteLine($"{i.Key} - {i.Count()} db, átlagos lakosság: {i.Average(x=>x.Nepesseg2)}");
+                }
+                
+            }
+
+            var brazil = varosok.FindAll(x => x.Orszag == "Brazília");
+
+            try
+            {
+                FileStream fajl = new FileStream("brazil.txt", FileMode.Create);
+                //StreamWriter writer = new StreamWriter(fajl, Encoding.UTF8);
+                //writer.WriteLine($"varos;nepesseg1;nepesseg2");
+                //foreach (var i in brazil)
+                //{
+                //    writer.WriteLine($"{i.VarosNev};{i.Nepesseg1};{i.Nepesseg2}");
+                //}
+                //writer.Close();
+                //Using blokk használata, a using automatikusan
+                //felszabadítja a nem használt erőforrásokat
+                using (StreamWriter writer = new StreamWriter(fajl, Encoding.UTF8))
+                {
+                    writer.WriteLine($"varos;nepesseg1;nepesseg2");
+                    foreach (var i in brazil)
+                    {
+                        writer.WriteLine($"{i.VarosNev};{i.Nepesseg1};{i.Nepesseg2}");
+                    }
+                }
+
+
+                Console.WriteLine("Kiírás kész!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);                
+            }
+
             Console.ReadKey();
         }
     }
