@@ -63,6 +63,42 @@ namespace Nobel
                 Console.WriteLine($"{i.Ev},{i.Tipus},{i.Vezeteknev} {i.Keresztnev}");
             }
 
+            var stat = nobeldijasok.ToLookup(x=>x.Tipus);
+
+            foreach (var i in stat)
+            {
+                Console.WriteLine($"{i.Key} - {i.Count()} db.");
+            }
+
+            var orvosi = nobeldijasok.FindAll(x => x.Tipus == "orvosi").OrderBy(x=>x.Ev);
+
+            try
+            {
+                FileStream fajl = new FileStream("orvosi.txt", FileMode.Create);
+                //StreamWriter writer = new StreamWriter(fajl, Encoding.UTF8);
+                //writer.WriteLine("ev;tipus;keresztnev;vezeteknev");
+                //foreach (var i in orvosi)
+                //{
+                //    writer.WriteLine($"{i.Ev};{i.Tipus};{i.Keresztnev};{i.Vezeteknev}");
+                //}
+                //writer.Close();
+                //
+                using (StreamWriter writer = new StreamWriter(fajl, Encoding.UTF8))
+                {
+                    writer.WriteLine("ev;tipus;keresztnev;vezeteknev");
+                    foreach (var i in orvosi)
+                        {
+                            writer.WriteLine($"{i.Ev};{i.Tipus};{i.Keresztnev};{i.Vezeteknev}");
+                        }
+                }
+                Console.WriteLine("Kiírás kész!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);                
+            }
+
+            
 
             Console.ReadKey();
         }
