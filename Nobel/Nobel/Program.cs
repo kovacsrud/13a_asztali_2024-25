@@ -14,7 +14,7 @@ namespace Nobel
             List<NobelDijas> nobeldijasok = new List<NobelDijas>();
             try
             {
-                var sorok = File.ReadAllLines("nobel.csv", Encoding.Default);
+                var sorok = File.ReadAllLines("nobel.csv", Encoding.UTF8);
 
                 for (int i = 1; i < sorok.Length; i++)
                 {
@@ -50,7 +50,18 @@ namespace Nobel
                 Console.WriteLine("Nincs ilyen!");
             }
 
-            var szervezetek = nobeldijasok.FindAll(x => x.Ev >= 1990 && x.Tipus == "béke");
+            var szervezetek = nobeldijasok.FindAll(x => x.Ev >= 1990 && x.Tipus == "béke" && x.Vezeteknev=="");
+
+            foreach (var i in szervezetek)
+            {
+                Console.WriteLine($"{i.Vezeteknev} {i.Keresztnev}");
+            }
+
+            var curie = nobeldijasok.FindAll(x=>x.Vezeteknev.Contains("Curie"));
+            foreach (var i in curie)
+            {
+                Console.WriteLine($"{i.Ev},{i.Tipus},{i.Vezeteknev} {i.Keresztnev}");
+            }
 
 
             Console.ReadKey();
