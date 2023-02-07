@@ -1,0 +1,15 @@
+﻿<Window x:Class="WpfAlap.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAlap"
+        mc:Ignorable="d"
+        Title="AkármiAblak" Height="550" Width="800">
+    <Grid>
+        <TextBox x:Name="textboxNev" HorizontalAlignment="Left" Height="55" Margin="291,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontSize="36"/>
+        <Label x:Name="labelSzoveg" Content="" HorizontalAlignment="Left" Margin="291,225,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.627,-0.003" Height="62" Width="204" FontSize="36"/>
+        <Button x:Name="buttonIras" Content="Írj!" HorizontalAlignment="Left" Margin="291,374,0,0" VerticalAlignment="Top" Width="204" FontSize="36" Click="buttonIras_Click"/>
+
+    </Grid>
+</Window>
