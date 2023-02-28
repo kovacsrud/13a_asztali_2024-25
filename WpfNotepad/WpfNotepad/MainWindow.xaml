@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfNotepad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfNotepad"
+        mc:Ignorable="d"
+        Title="NotePad" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Menu x:Name="mainMenu">
+            <MenuItem Header="Fájl" FontSize="18" >
+                <MenuItem Header="Megnyitás" FontSize="18" />
+                <MenuItem Header="Mentés" FontSize="18" />
+                <MenuItem Header="Mentés Másként" FontSize="18" />
+                <Separator />
+                <MenuItem Header="Kilépés" FontSize="18" Click="Kilepes_Click" />
+            </MenuItem>
+            <MenuItem Header="Szerkesztés" FontSize="18" >
+                <MenuItem Header="Kivágás" FontSize="18"/>
+                <MenuItem Header="Másolás" FontSize="18"/>
+                <MenuItem Header="Beillesztés" FontSize="18"/>
+            </MenuItem>
+            <MenuItem Header="Súgó" FontSize="18" >
+                <MenuItem Header="Névjegy" FontSize="18" Click="Nevjegy_Click"/>
+            </MenuItem>
+
+        </Menu>
+        
+    </Grid>
+</Window>
