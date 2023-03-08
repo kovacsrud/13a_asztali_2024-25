@@ -13,9 +13,9 @@
         </Grid.RowDefinitions>
         <Menu x:Name="mainMenu">
             <MenuItem Header="Fájl" FontSize="18" >
-                <MenuItem Header="Megnyitás" FontSize="18" />
+                <MenuItem Header="Megnyitás" FontSize="18" Click="Megnyit_Click"/>
                 <MenuItem Header="Mentés" FontSize="18" />
-                <MenuItem Header="Mentés Másként" FontSize="18" />
+                <MenuItem Header="Mentés Másként" FontSize="18" Click="MentesMaskent_Click"/>
                 <Separator />
                 <MenuItem Header="Kilépés" FontSize="18" Click="Kilepes_Click" />
             </MenuItem>
@@ -29,6 +29,8 @@
             </MenuItem>
 
         </Menu>
-        
+
+        <TextBox x:Name="textboxSzoveg" AcceptsReturn="True" AcceptsTab="True" FontSize="24" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Grid.Row="1" />
+
     </Grid>
 </Window>
