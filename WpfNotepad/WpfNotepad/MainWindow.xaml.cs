@@ -22,6 +22,7 @@ namespace WpfNotepad
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool modositva = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -29,7 +30,21 @@ namespace WpfNotepad
 
         private void Kilepes_Click(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            if (modositva)
+            {
+                var valasz = MessageBox.Show("Akarja menteni a módosításokat?", "Figyelem!", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+                if (valasz==MessageBoxResult.OK)
+                {
+                    MentesMaskent();
+                } else
+                {
+                    Environment.Exit(0);
+                }
+                
+                
+                
+            }
+            
         }
 
         private void Nevjegy_Click(object sender, RoutedEventArgs e)
@@ -65,6 +80,25 @@ namespace WpfNotepad
             MentesMaskent();
         }
 
+        private void Mentes_Click(object sender,RoutedEventArgs e)
+        {
+            if (this.Title=="NotePad")
+            {
+                MentesMaskent();
+            } else
+            {
+                try
+                {
+                    File.WriteAllText(this.Title, textboxSzoveg.Text,Encoding.Default);
+                    modositva = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);                    
+                }
+            }
+        }
+
         private void MentesMaskent()
         {
             SaveFileDialog dialog = new SaveFileDialog();
@@ -76,6 +110,7 @@ namespace WpfNotepad
                 {
                     File.WriteAllText(dialog.FileName, textboxSzoveg.Text, Encoding.Default);
                     this.Title = dialog.FileName;
+                    modositva = false;
                 }
                 catch (Exception ex)
                 {
@@ -83,6 +118,65 @@ namespace WpfNotepad
                 }
             }
 
+        }
+
+        private void textboxSzoveg_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            modositva = true;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (modositva)
+            {
+                var valasz = MessageBox.Show("Akarja menteni a változásokat?", "Figyelem!", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+                if (valasz==MessageBoxResult.OK)
+                {
+                    MentesMaskent();
+                }
+            }
+        }
+
+        private void textboxSzoveg_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            if (textboxSzoveg.SelectedText.Length>0)
+            {
+                menuitemKivagas.IsEnabled = true;
+                menuitemMasolas.IsEnabled = true;
+            }
+            if (textboxSzoveg.SelectedText.Length<1)
+            {
+                menuitemKivagas.IsEnabled = false;
+                menuitemMasolas.IsEnabled = false;
+            }
+        }
+
+        private void Masolas_Click(object sender,RoutedEventArgs e)
+        {
+            if (textboxSzoveg.SelectedText.Length>0)
+            {
+                Clipboard.SetText(textboxSzoveg.SelectedText);
+            }
+
+            menuitemBeillesztes.IsEnabled = true;
+        }
+
+        private void Kivagas_Click(object sender,RoutedEventArgs e)
+        {
+            if (textboxSzoveg.SelectedText.Length>0)
+            {
+                Clipboard.SetText(textboxSzoveg.SelectedText);
+
+                textboxSzoveg.Text = textboxSzoveg.Text.Remove(textboxSzoveg.CaretIndex,textboxSzoveg.SelectedText.Length);
+                menuitemBeillesztes.IsEnabled = true;
+
+            }
+        }
+
+        private void Beilleszt_Click(object sender, RoutedEventArgs e)
+        {
+            var vagolapSzoveg = Clipboard.GetText();
+            textboxSzoveg.Text = textboxSzoveg.Text.Insert(textboxSzoveg.CaretIndex, vagolapSzoveg);
         }
     }
 }

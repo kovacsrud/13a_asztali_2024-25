@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfNotepad"
         mc:Ignorable="d"
-        Title="NotePad" Height="450" Width="800">
+        Title="NotePad" Height="450" Width="800" Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -14,15 +14,15 @@
         <Menu x:Name="mainMenu">
             <MenuItem Header="Fájl" FontSize="18" >
                 <MenuItem Header="Megnyitás" FontSize="18" Click="Megnyit_Click"/>
-                <MenuItem Header="Mentés" FontSize="18" />
+                <MenuItem Header="Mentés" FontSize="18" Click="Mentes_Click"/>
                 <MenuItem Header="Mentés Másként" FontSize="18" Click="MentesMaskent_Click"/>
                 <Separator />
                 <MenuItem Header="Kilépés" FontSize="18" Click="Kilepes_Click" />
             </MenuItem>
             <MenuItem Header="Szerkesztés" FontSize="18" >
-                <MenuItem Header="Kivágás" FontSize="18"/>
-                <MenuItem Header="Másolás" FontSize="18"/>
-                <MenuItem Header="Beillesztés" FontSize="18"/>
+                <MenuItem Header="Kivágás" x:Name="menuitemKivagas" FontSize="18" IsEnabled="False" Click="Kivagas_Click"/>
+                <MenuItem Header="Másolás" x:Name="menuitemMasolas" FontSize="18" IsEnabled="False" Click="Masolas_Click"/>
+                <MenuItem Header="Beillesztés" x:Name="menuitemBeillesztes" FontSize="18" IsEnabled="False" Click="Beilleszt_Click"/>
             </MenuItem>
             <MenuItem Header="Súgó" FontSize="18" >
                 <MenuItem Header="Névjegy" FontSize="18" Click="Nevjegy_Click"/>
@@ -30,7 +30,7 @@
 
         </Menu>
 
-        <TextBox x:Name="textboxSzoveg" AcceptsReturn="True" AcceptsTab="True" FontSize="24" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Grid.Row="1" />
+        <TextBox x:Name="textboxSzoveg" AcceptsReturn="True" AcceptsTab="True" FontSize="24" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Grid.Row="1" TextChanged="textboxSzoveg_TextChanged" SelectionChanged="textboxSzoveg_SelectionChanged" />
 
     </Grid>
 </Window>
