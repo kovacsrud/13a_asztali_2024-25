@@ -78,7 +78,7 @@
             <ComboBoxItem Content="15" FontSize="20" HorizontalContentAlignment="Center" />
 
         </ComboBox>
-        <TextBox x:Name="textboxJelszo" Text="próba" Grid.Row="6" Grid.ColumnSpan="2" FontSize="22" Width="300" Height="34" IsEnabled="False" />
+        <TextBox x:Name="textboxJelszo" Grid.Row="6" Grid.ColumnSpan="2" FontSize="22" Width="300" Height="34" IsEnabled="False" />
         <Button x:Name="buttonGeneral" Content="Generálás" Grid.Row="7" FontSize="22" Grid.ColumnSpan="2" Width="150" Height="34" />
 
     </Grid>
