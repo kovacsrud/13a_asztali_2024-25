@@ -27,7 +27,7 @@
         <TextBlock Text="nagybetűk:" FontSize="26" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock Text="számok:" FontSize="26" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock Text="írásjelek:" FontSize="26" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <CheckBox x:Name="checkboxKisbetuk" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" >
+        <CheckBox x:Name="checkboxKisbetuk" IsChecked="True" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" >
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="2" ScaleY="2"/>
@@ -79,7 +79,7 @@
 
         </ComboBox>
         <TextBox x:Name="textboxJelszo" Grid.Row="6" Grid.ColumnSpan="2" FontSize="22" Width="300" Height="34" IsEnabled="False" />
-        <Button x:Name="buttonGeneral" Content="Generálás" Grid.Row="7" FontSize="22" Grid.ColumnSpan="2" Width="150" Height="34" />
+        <Button x:Name="buttonGeneral" Content="Generálás" Grid.Row="7" FontSize="22" Grid.ColumnSpan="2" Width="150" Height="34" Click="buttonGeneral_Click" />
 
     </Grid>
 </Window>
