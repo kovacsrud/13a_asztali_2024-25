@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfJackie.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfJackie"
+        mc:Ignorable="d"
+        Title="Jackie Stewart" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="datagridAdatok" ColumnWidth="*"/>
+        <Button x:Name="buttonBetolt" Content="Betöltés" Grid.Row="2" Width="200" Height="50" FontSize="30" Click="buttonBetolt_Click"/>
+        <WrapPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="A keresett év:" FontSize="25" Margin="0,0,10,0"/>
+            <ComboBox x:Name="comboYears" DisplayMemberPath="Year" SelectedValuePath="Year" />
+
+            <TextBox x:Name="textboxYear" Width="200" FontSize="20" Margin="0,0,10,0"/>
+            <Button x:Name="buttonKeres" Content="Keresés" FontSize="20" Click="buttonKeres_Click" Margin="0,0,10,0"/>
+            <Button x:Name="buttonReset" Content="Összes adat" FontSize="20" Click="buttonReset_Click"/>
+        </WrapPanel>
+    </Grid>
+    
+</Window>

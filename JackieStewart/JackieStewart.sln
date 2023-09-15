@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JackieStewart", "JackieStewart\JackieStewart.csproj", "{ACD15DC5-B227-4BF6-AECC-A51D27C25894}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JackieStewart", "JackieStewart\JackieStewart.csproj", "{ACD15DC5-B227-4BF6-AECC-A51D27C25894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfJackie", "WpfJackie\WpfJackie.csproj", "{98273008-6830-4C32-9DCA-81F5DF34F67C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{ACD15DC5-B227-4BF6-AECC-A51D27C25894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACD15DC5-B227-4BF6-AECC-A51D27C25894}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACD15DC5-B227-4BF6-AECC-A51D27C25894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98273008-6830-4C32-9DCA-81F5DF34F67C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98273008-6830-4C32-9DCA-81F5DF34F67C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98273008-6830-4C32-9DCA-81F5DF34F67C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98273008-6830-4C32-9DCA-81F5DF34F67C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
