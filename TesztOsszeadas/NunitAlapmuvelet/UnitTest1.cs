@@ -9,9 +9,10 @@ namespace NunitAlapmuvelet
         }
 
         [Test]
-        [TestCase(10,20,30)]
-        [TestCase(20,20,40)]
-        [TestCase(50,50,100)]
+        //[TestCase(10,20,30)]
+        //[TestCase(20,20,40)]
+        //[TestCase(50,50,100)]
+        [TestCaseSource("GetOsszeadasAdatok")]
         public void OsszeadTest(double a,double b,double elvart)
         {
             //Arrange
@@ -23,6 +24,21 @@ namespace NunitAlapmuvelet
             //Assert
             Assert.AreEqual(elvart, eredmeny);
             
+        }
+
+        public static IEnumerable<double[]> GetOsszeadasAdatok()
+        {
+            var sorok = File.ReadAllLines("tesztesetek_osszeadas.csv");
+            for (int i = 0; i < sorok.Length; i++)
+            {
+                var adatok = sorok[i].Split(';');
+                double a = Convert.ToDouble(adatok[0]);
+                double b = Convert.ToDouble(adatok[1]);
+                double elvart= Convert.ToDouble(adatok[2]);
+
+                yield return new[] { a, b, elvart };
+            }
+
         }
 
         [Test]
