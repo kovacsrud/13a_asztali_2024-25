@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -23,6 +24,7 @@ namespace WpfRandomUser
     public partial class MainWindow : Window
     {
         Users users;
+        Posts posts;
         public MainWindow()
         {
             InitializeComponent();
@@ -32,6 +34,14 @@ namespace WpfRandomUser
             comboboxUserNumber.Items.Add(30);
             comboboxUserNumber.Items.Add(50);
             comboboxUserNumber.SelectedIndex = 0;
+
+            //string postsStr ="{postlist:"+new WebClient().DownloadString($"https://jsonplaceholder.typicode.com/posts")+"}";
+
+            //JObject postsObj=JObject.Parse(postStr);
+            //Posts posts=postsObj.ToObject<Posts>();
+         
+
+
         }
 
         public Users GetUsers(int db)
