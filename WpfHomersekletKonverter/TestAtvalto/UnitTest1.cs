@@ -33,6 +33,7 @@ namespace TestAtvalto
         {
             var homerseklet = driver.FindElementByAccessibilityId("homersekletErtek");
             homerseklet.Clear();
+            driver.FindElementByAccessibilityId("celsiusKivalaszt").Click();
             homerseklet.SendKeys(fahrenheit.ToString());
             driver.FindElementByAccessibilityId("buttonKonvertalas").Click();
             var eredmeny=driver.FindElementByAccessibilityId("konvertaltHomerseklet");
@@ -40,6 +41,24 @@ namespace TestAtvalto
 
             Assert.AreEqual(elvart,Convert.ToDouble(eredmeny.Text),0.0005);
         }
+
+        [Test]
+        [TestCase(31,87.8)]
+        [TestCase(22, 71.6)]
+        public void FahrenheitTest(double celsius,double elvart)
+        {
+            var homerseklet = driver.FindElementByAccessibilityId("homersekletErtek");
+            homerseklet.Clear();
+            driver.FindElementByAccessibilityId("fahrenheitKivalaszt").Click();
+            homerseklet.SendKeys(celsius.ToString());
+            driver.FindElementByAccessibilityId("buttonKonvertalas").Click();
+            var eredmeny = driver.FindElementByAccessibilityId("konvertaltHomerseklet");
+
+
+            Assert.AreEqual(elvart, Convert.ToDouble(eredmeny.Text), 0.0005);
+        }
+
+
 
         [OneTimeTearDown]
         public void Endtest()
