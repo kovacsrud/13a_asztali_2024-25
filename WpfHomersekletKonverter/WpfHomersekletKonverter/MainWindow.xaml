@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfHomersekletKonverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfHomersekletKonverter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="homersekletErtek" Width="300" Height="40" FontSize="30" />
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <RadioButton x:Name="celsiusKivalaszt" Content="Konvertálás Celsiusra" FontSize="20" VerticalContentAlignment="Center" IsChecked="True"/>
+            <RadioButton x:Name="fahrenheitKivalaszt" Content="Konvertálás Fahrenheitre" FontSize="20" VerticalContentAlignment="Center"/>
+
+        </StackPanel>
+        <TextBlock Grid.Row="2" x:Name="konvertaltHomerseklet" FontSize="40" HorizontalAlignment="Center" MinWidth="400" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <Button x:Name="buttonKonvertalas" Content="Számolás" FontSize="16" Grid.Row="3" Width="200" Height="40" Click="buttonKonvertalas_Click"/>
+
+    </Grid>
+</Window>
