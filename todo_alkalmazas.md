@@ -10,4 +10,15 @@ Hozzunk létre egy WPF alkalmazást
 ### Modell létrehozása
 Hozzunk létre a projektben egy **Models** nevű mappát ebbe kerülnek az adatmodellek.
 
+A **Models** mappában hozzunk létre egy új osztályt **Todo** néven
+Az osztály kódja:
+```C#
+ public class Todo
+ {
+     public int Id { get; set; }
+     public string Title { get; set; }
+     public DateTime Created {  get; set; }= DateTime.Now;
+     public bool Completed { get; set; }
+ }
+```
 
