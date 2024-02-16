@@ -126,3 +126,27 @@ Módosítsuk a Datagridet, hogy ne jelenjen meg az Id, valamit a dátum megjelen
        </DataGrid.Columns>
    </DataGrid>
 ```
+Kódoljuk le a Mentés gomb funkcióját!
+Alapvetően a todoContext.SaveChanges() végzi az adatok mentését az adatbázisba. A funkció visszaad egy Int értéket, amelyből meg tudjuk mondani, hogy történt-e változás az adatbázisban, vagy nem.
+
+```C#
+ private void buttonSave_Click(object sender, RoutedEventArgs e)
+ {
+     try
+     {
+         var result=todoContext.SaveChanges();
+         if (result>0)
+         {
+             datagridTodos.Items.Refresh();
+             MessageBox.Show("Változások mentve!");
+         } else
+         {
+             MessageBox.Show("Nem történt mentés!");
+         }
+     }
+     catch (Exception ex)
+     {
+         MessageBox.Show(ex.Message);                
+     }
+ }
+```
