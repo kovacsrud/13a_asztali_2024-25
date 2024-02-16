@@ -35,4 +35,9 @@ public class TodoContext:DbContext
     }
 }
 ```
+### Migrációs lépés létrehozása
+A Package Manager Console-ban adjuk meg a következő parancsokatt:
+ - Add-Migration init
+ - Update-Database
 
+   
