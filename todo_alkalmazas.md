@@ -21,4 +21,18 @@ Az osztály kódja:
      public bool Completed { get; set; }
  }
 ```
+A **Models** mappában hozzunk létre egy másik osztályt **TodoContext** néven.
+Az osztály kódja:
+```c#
+public class TodoContext:DbContext
+{
+    public virtual DbSet<Todo> Todos { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        base.OnConfiguring(optionsBuilder);
+        optionsBuilder.UseSqlite(@"Data Source=d:\tododb.db");
+    }
+}
+```
 
