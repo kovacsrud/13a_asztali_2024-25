@@ -40,4 +40,20 @@ A Package Manager Console-ban adjuk meg a következő parancsokatt:
  - Add-Migration init
  - Update-Database
 
-   
+## !! Eszünkbe jut, hogy kellene még egy Description nevű mező is!
+Kibővítjük a Todo.cs fájlban lévő modellünket.
+```c#
+public class Todo
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public string Description { get; set; }
+    public DateTime Created {  get; set; }= DateTime.Now;
+    public bool Completed { get; set; }
+}
+```
+Ezt követően adjuk ki a Package Manager Console-ban a következő parancsokat:
+ - Add-Migration add_description
+ - Update-Database
+
+Ezzel a Description mező bekerült az adatbázisba.
