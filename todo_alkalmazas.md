@@ -57,3 +57,31 @@ Ezt követően adjuk ki a Package Manager Console-ban a következő parancsokat:
  - Update-Database
 
 Ezzel a Description mező bekerült az adatbázisba.
+
+Nyissuk meg a **MainWindow.xaml.cs** fájlt!
+
+Deklaráljuk a contextet és egy listát, amibe majd az adatokat gyűjtjük.
+```C#
+TodoContext todoContext;
+public ObservableCollection<Todo> Todos { get; set; }
+```
+A konstruktorban példányosítjuk a context osztályunkat, betöltjük az adatokat, majd megadjuk az ablak DataContext-jét:
+```C#
+ public MainWindow()
+ {
+     InitializeComponent();
+     todoContext = new TodoContext();
+     todoContext.Add(new Todo {
+         Title = "Teszt",
+         Description="Teszt todo leírása",
+         Completed = false
+         
+     });
+     todoContext.SaveChanges();
+     todoContext.Todos.Load();
+     Todos = todoContext.Todos.Local.ToObservableCollection();
+
+     DataContext = Todos;
+
+ }
+```
