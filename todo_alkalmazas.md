@@ -109,4 +109,20 @@ Az egyes változtatásokat az adatbázison a Mentés gomb lenyomásával mentjü
 
  </Grid>
 ```
-
+Módosítsuk a Datagridet, hogy ne jelenjen meg az Id, valamit a dátum megjelenítésére dátumválasztót használjunk!
+```XAML
+   <DataGrid x:Name="datagridTodos" ItemsSource="{Binding}" AutoGenerateColumns="False" ColumnWidth="*" >
+       <DataGrid.Columns>
+           <DataGridTextColumn Header="Cím" Binding="{Binding Title}" />
+           <DataGridTextColumn Header="Teendő" Binding="{Binding Description}"/>
+           <DataGridTemplateColumn Header="Létrehozva">
+               <DataGridTemplateColumn.CellTemplate>
+                   <DataTemplate>
+                       <DatePicker SelectedDate="{Binding Created}"/>
+                   </DataTemplate>
+               </DataGridTemplateColumn.CellTemplate>
+           </DataGridTemplateColumn>
+           <DataGridCheckBoxColumn Header="Elvégezve?" Binding="{Binding Completed}"/>
+       </DataGrid.Columns>
+   </DataGrid>
+```
