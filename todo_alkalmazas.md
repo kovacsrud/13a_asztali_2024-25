@@ -85,3 +85,28 @@ A konstruktorban példányosítjuk a context osztályunkat, betöltjük az adato
 
  }
 ```
+Az első futtatás után kommenteljük ki a következőket:
+```c#
+ todoContext.Add(new Todo {
+         Title = "Teszt",
+         Description="Teszt todo leírása",
+         Completed = false
+         
+     });
+     todoContext.SaveChanges();
+```
+Váltsunk a **MainWindow.xaml** fájlra, készítsünk felületet az adatok kezeléséhez! Az adatok megjelenítéséhez **datagrid** komponenst használunk. 
+Az egyes változtatásokat az adatbázison a Mentés gomb lenyomásával mentjük majd el.
+
+```XAML
+ <Grid>
+     <Grid.RowDefinitions>
+         <RowDefinition Height="8*"/>
+         <RowDefinition Height="2*"/>
+     </Grid.RowDefinitions>
+     <DataGrid x:Name="datagridTodos" ItemsSource="{Binding}" ColumnWidth="*" />
+     <Button x:Name="buttonSave" Content="Mentés" FontSize="20" Width="200" Height="30" Grid.Row="1"/>
+
+ </Grid>
+```
+
