@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfKutyakSqlite.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfKutyakSqlite"
+        mc:Ignorable="d"
+        Title="Állatorvosi rendelő" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="Fájl">
+                <MenuItem Header="Megnyitás"/>
+                <MenuItem Header="Mentés"/>
+                <MenuItem Header="Kilépés"/>
+            </MenuItem>
+            <MenuItem Header="Szerkesztés">
+                <MenuItem Header="Kivágás"/>
+                <MenuItem Header="Másolás"/>
+                <MenuItem Header="Beillesztés"/>
+            </MenuItem>
+            <MenuItem Header="Adatok kezelése">
+                <MenuItem x:Name="menuitemKutyanevek" Header="Kutyanevek kezelése" Click="menuitemKutyanevek_Click"/>
+                <MenuItem Header="Kutyafajták kezelése"/>
+                <MenuItem Header="Rendelési adatok kezelése"/>
+            </MenuItem>
+            <MenuItem Header="Súgó"/>
+        </Menu>
+
+    </Grid>
+</Window>
