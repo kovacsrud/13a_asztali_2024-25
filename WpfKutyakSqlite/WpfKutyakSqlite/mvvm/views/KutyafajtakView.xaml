@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="KutyafajtakView" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="datagridKutyafajtak" ItemsSource="{Binding Kutyafajtak}" AutoGenerateColumns="False" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Fajta neve" Binding="{Binding Nev}"/>
+                <DataGridTextColumn Header="Eredeti név" Binding="{Binding Eredetinev}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="buttonMentes" Content="Mentés" Grid.Row="1" Width="200" Height="30" Click="buttonMentes_Click"/>
+
     </Grid>
 </Window>

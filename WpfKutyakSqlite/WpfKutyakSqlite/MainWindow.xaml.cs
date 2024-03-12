@@ -39,5 +39,31 @@ namespace WpfKutyakSqlite
             }
             
         }
+
+        private void menuitemKutyafajtak_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                KutyafajtakView kutyafajtak = new KutyafajtakView(ViewModel);
+                kutyafajtak.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void menuitemKutyak_Click(object sender, RoutedEventArgs e)
+        {
+            KutyakView kutyak = new KutyakView(ViewModel);
+            kutyak.ShowDialog();
+        }
+
+        private void menuitemUjKutya_Click(object sender, RoutedEventArgs e)
+        {
+            KutyakModView kutyakModView = new KutyakModView(ViewModel,new DataGrid());
+            kutyakModView.ShowDialog();
+        }
     }
 }

@@ -24,8 +24,9 @@
             </MenuItem>
             <MenuItem Header="Adatok kezelése">
                 <MenuItem x:Name="menuitemKutyanevek" Header="Kutyanevek kezelése" Click="menuitemKutyanevek_Click"/>
-                <MenuItem Header="Kutyafajták kezelése"/>
-                <MenuItem Header="Rendelési adatok kezelése"/>
+                <MenuItem x:Name="menuitemKutyafajtak" Header="Kutyafajták kezelése" Click="menuitemKutyafajtak_Click"/>
+                <MenuItem x:Name="menuitemKutyak" Header="Rendelési adatok kezelése" Click="menuitemKutyak_Click"/>
+                <MenuItem x:Name="menuitemUjKutya" Header="Új rendelési adat felvitele" Click="menuitemUjKutya_Click"/>
             </MenuItem>
             <MenuItem Header="Súgó"/>
         </Menu>

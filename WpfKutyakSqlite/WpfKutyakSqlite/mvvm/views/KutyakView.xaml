@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfKutyakSqlite.mvvm.views"
         mc:Ignorable="d"
-        Title="KutyakView" Height="450" Width="800">
+        Title="Rendelési adatok" Height="450" Width="800">
     <Grid>
-        
+        <DataGrid x:Name="datagridKutyak" ItemsSource="{Binding Kutyak}" AutoGenerateColumns="False" ColumnWidth="*" IsReadOnly="True" MouseDoubleClick="datagridKutyak_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="A kutya neve" Binding="{Binding Nev.Kutyanev}" />
+                <DataGridTextColumn Header="A kutya fajtája" Binding="{Binding Fajta.Nev}" />
+                <DataGridTextColumn Header="Életkor" Binding="{Binding Eletkor}"/>
+                <DataGridTextColumn Header="Utolsó ellenőrzés" Binding="{Binding Utolsoell}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

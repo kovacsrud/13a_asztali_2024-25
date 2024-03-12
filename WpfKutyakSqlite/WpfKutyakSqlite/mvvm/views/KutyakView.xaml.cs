@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfKutyakSqlite.mvvm.models;
+using WpfKutyakSqlite.mvvm.viewmodels;
 
 namespace WpfKutyakSqlite.mvvm.views
 {
@@ -19,9 +21,18 @@ namespace WpfKutyakSqlite.mvvm.views
     /// </summary>
     public partial class KutyakView : Window
     {
-        public KutyakView()
+        public KutyakView(KutyaViewModel vm)
         {
             InitializeComponent();
+            DataContext = vm;
+        }
+
+        private void datagridKutyak_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var vm=DataContext as KutyaViewModel;
+            vm.SelectedKutya = datagridKutyak.SelectedItem as Kutya;
+            KutyakModView kutyakmod=new KutyakModView(vm,datagridKutyak,true);
+            kutyakmod.ShowDialog();
         }
     }
 }

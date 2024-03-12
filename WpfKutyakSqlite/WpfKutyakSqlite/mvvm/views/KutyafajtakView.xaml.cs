@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfKutyakSqlite.mvvm.viewmodels;
 
 namespace WpfKutyakSqlite.mvvm.views
 {
@@ -19,9 +20,16 @@ namespace WpfKutyakSqlite.mvvm.views
     /// </summary>
     public partial class KutyafajtakView : Window
     {
-        public KutyafajtakView()
+        public KutyafajtakView(KutyaViewModel vm)
         {
             InitializeComponent();
+            DataContext = vm;
+        }
+
+        private void buttonMentes_Click(object sender, RoutedEventArgs e)
+        {
+            var vm=DataContext as KutyaViewModel;
+            vm.DbMentes();
         }
     }
 }
