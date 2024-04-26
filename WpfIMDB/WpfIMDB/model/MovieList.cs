@@ -11,6 +11,7 @@ namespace WpfIMDB.model
     {
         //Ezt a listát kötjük majd be a gridbe
         public List<Movie> Movies { get; set; } = new List<Movie>();
+        public List<string> Kategoriak { get; set; }= new List<string>();
 
         public MovieList(string fajl,char hatarolo,int start=1)
         {
@@ -20,6 +21,16 @@ namespace WpfIMDB.model
             {
                 Movies.Add(new Movie(sorok[i], hatarolo));
             }
+
+            //Kategóriák létrehozása
+            var katlookup = Movies.ToLookup(x => x.Genre);
+
+            foreach (var i in katlookup)
+            {
+                Kategoriak.Add(i.Key);
+            }
+
+
 
 
         }

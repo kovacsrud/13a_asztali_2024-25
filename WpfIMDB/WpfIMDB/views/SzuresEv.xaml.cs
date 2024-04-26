@@ -25,6 +25,7 @@ namespace WpfIMDB.views
         {
             InitializeComponent();
             DataContext = movieList;
+            
         }
 
         private void buttonKeres_Click(object sender, RoutedEventArgs e)

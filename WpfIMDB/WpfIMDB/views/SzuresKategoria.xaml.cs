@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfIMDB.model;
 
 namespace WpfIMDB.views
 {
@@ -19,9 +20,23 @@ namespace WpfIMDB.views
     /// </summary>
     public partial class SzuresKategoria : Window
     {
-        public SzuresKategoria()
+        public SzuresKategoria(MovieList movieList)
         {
             InitializeComponent();
+            DataContext = movieList;
+            //Az XAML-ben is beállítható!
+            //comboboxKategoria.SelectedIndex = 0;
+        }
+
+        private void comboboxKategoria_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var kivalasztottKat = comboboxKategoria.SelectedItem.ToString();
+
+            var movies=DataContext as MovieList;
+
+            var results=movies.Movies.FindAll(x=>x.Genre==kivalasztottKat);
+
+            datagridMovies.ItemsSource= results;
         }
     }
 }
