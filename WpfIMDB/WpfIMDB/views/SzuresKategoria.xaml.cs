@@ -34,7 +34,7 @@ namespace WpfIMDB.views
 
             var movies=DataContext as MovieList;
 
-            var results=movies.Movies.FindAll(x=>x.Genre==kivalasztottKat);
+            var results=movies.Movies.FindAll(x=>x.Genre.ToLower().Contains(kivalasztottKat));
 
             datagridMovies.ItemsSource= results;
         }

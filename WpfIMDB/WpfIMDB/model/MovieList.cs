@@ -25,9 +25,28 @@ namespace WpfIMDB.model
             //Kategóriák létrehozása
             var katlookup = Movies.ToLookup(x => x.Genre);
 
+            Dictionary<string,string> kategoriak = new Dictionary<string,string>();
+
             foreach (var i in katlookup)
             {
-                Kategoriak.Add(i.Key);
+                
+                var daraboltKategoriak = i.Key.ToLower().Split(',');
+
+                for (int j = 0; j < daraboltKategoriak.Length; j++)
+                {
+
+                    if (!kategoriak.ContainsKey(daraboltKategoriak[j].Trim()))
+                    {
+                        kategoriak[daraboltKategoriak[j].Trim()] = daraboltKategoriak[j].Trim();
+                    }
+                }
+
+                
+            }
+
+            foreach (KeyValuePair<string,string> dictData  in kategoriak)
+            {
+                Kategoriak.Add(dictData.Value);
             }
 
 
