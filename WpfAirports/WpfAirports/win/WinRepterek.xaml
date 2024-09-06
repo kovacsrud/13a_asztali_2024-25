@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="WinRepterek" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="airportData" ItemsSource="{Binding}" AutoGenerateColumns="False" ColumnWidth="*" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Reptér kód" Binding="{Binding AirportCode}" />
+                <DataGridTextColumn Header="Reptér neve" Binding="{Binding AirportName}" />
+                <DataGridTextColumn Header="Reptér országkód" Binding="{Binding AirportCountryCode}" />
+                <DataGridTextColumn Header="Tengerszint feletti magasság" Binding="{Binding AirportElevation}" />
+                <DataGridTextColumn Header="Kontinens" Binding="{Binding AirportContinent}" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <WrapPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBox x:Name="textboxKeres" Width="300" Height="40" FontSize="20"/>
+            <Button x:Name="buttonKeres" Content="Keresés" FontSize="18" Click="buttonKeres_Click"/>
+            <Button x:Name="buttonVissza" Content="Összes adat" FontSize="18" Click="buttonVissza_Click"/>
+        </WrapPanel>
+
     </Grid>
 </Window>

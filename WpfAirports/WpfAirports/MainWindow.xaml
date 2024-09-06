@@ -24,7 +24,7 @@
                 <MenuItem Header="Beillesztés"/>
             </MenuItem>
             <MenuItem Header="Reptér adatok">
-                <MenuItem Header="Keresés"/>
+                <MenuItem x:Name="menuitemKereses" Header="Keresés" Click="menuitemKereses_Click"/>
             </MenuItem>
             <MenuItem Header="Súgó">
                 <MenuItem x:Name="menuitemNevjegy" Header="Névjegy" Click="menuitemNevjegy_Click"/>

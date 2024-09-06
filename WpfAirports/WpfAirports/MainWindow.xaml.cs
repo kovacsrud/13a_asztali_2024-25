@@ -55,5 +55,11 @@ namespace WpfAirports
             }
 
         }
+
+        private void menuitemKereses_Click(object sender, RoutedEventArgs e)
+        {
+            WinRepterek winRepterek = new WinRepterek(Airports);
+            winRepterek.ShowDialog();
+        }
     }
 }

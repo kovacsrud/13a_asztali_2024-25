@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfAirports.model;
 
 namespace WpfAirports.win
 {
@@ -19,9 +20,36 @@ namespace WpfAirports.win
     /// </summary>
     public partial class WinRepterek : Window
     {
-        public WinRepterek()
+        public WinRepterek(List<Airport> airports)
         {
             InitializeComponent();
+            DataContext = airports;
+        }
+
+        private void buttonKeres_Click(object sender, RoutedEventArgs e)
+        {
+            var airports=DataContext as List<Airport>;
+
+            airportData.ItemsSource = null;
+
+            var result = airports.FindAll(x=>x.AirportName.ToLower().Contains(textboxKeres.Text.ToLower()));
+
+            if (result.Count > 0)
+            {
+                airportData.ItemsSource = result;
+            } else
+            {
+                MessageBox.Show("Nincs a feltételnek megfelelő nevű reptér!","Info");
+            }
+
+
+        }
+
+        private void buttonVissza_Click(object sender, RoutedEventArgs e)
+        {
+            var airports = DataContext as List<Airport>;
+
+            airportData.ItemsSource = airports;
         }
     }
 }
