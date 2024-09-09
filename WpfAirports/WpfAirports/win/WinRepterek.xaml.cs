@@ -73,7 +73,12 @@ namespace WpfAirports.win
         private void buttonCountryKeres_Click(object sender, RoutedEventArgs e)
         {
             var airports = DataContext as List<Airport>;
+
             var selectedCountryCode = comboAirportCountryCodes.SelectedItem.ToString();
+
+            var results=airports.FindAll(x=>x.AirportCountryCode == selectedCountryCode);
+
+            airportData.ItemsSource= results;
         }
     }
 }
