@@ -24,6 +24,8 @@ namespace WpfAirports.win
         {
             InitializeComponent();
             DataContext = airports;
+            comboAirportCountryCodes.ItemsSource=getAirportCountryCodes();
+            comboAirportCountryCodes.SelectedIndex=0;
         }
 
         private void buttonKeres_Click(object sender, RoutedEventArgs e)
@@ -50,6 +52,28 @@ namespace WpfAirports.win
             var airports = DataContext as List<Airport>;
 
             airportData.ItemsSource = airports;
+        }
+
+        private List<string> getAirportCountryCodes()
+        {
+
+            var airports = DataContext as List<Airport>;
+
+            List<string> countryCodes = new List<string>();
+
+            var osszesites = airports.ToLookup(x => x.AirportCountryCode).OrderBy(x=>x.Key);
+
+            foreach (var i in osszesites)
+            {
+                countryCodes.Add(i.Key);
+            }
+            return countryCodes;
+        }
+
+        private void buttonCountryKeres_Click(object sender, RoutedEventArgs e)
+        {
+            var airports = DataContext as List<Airport>;
+            var selectedCountryCode = comboAirportCountryCodes.SelectedItem.ToString();
         }
     }
 }
