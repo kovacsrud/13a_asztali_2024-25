@@ -13,6 +13,7 @@ let randomh1=document.createElement('h1');
 randomh1.textContent=randomszam;
 
 root.appendChild(randomh1);
+Math.r
 
 //Feladat
 //Hozzon létre két listát! Az egyikben 6 db vezetéknév,
