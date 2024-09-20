@@ -11,7 +11,8 @@
             <RowDefinition Height="8*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="datagridKutyanevek" IsReadOnly="True" ColumnWidth="*"/>
+        <DataGrid x:Name="datagridKutyanevek" IsReadOnly="True" ColumnWidth="*" MouseDoubleClick="datagridKutyanevek_MouseDoubleClick"/>
+        <Button  x:Name="buttonUjkutyanev" Content="Új kutyanév" Grid.Row="3" Width="200" Height="30" FontSize="20" Click="buttonUjkutyanev_Click" />
 
     </Grid>
 </Window>

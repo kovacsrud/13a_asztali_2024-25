@@ -25,52 +25,24 @@ namespace WpfDbKutyak.Views
         public ViewKutyanev()
         {
             InitializeComponent();
-            datagridKutyanevek.ItemsSource = GetKutyanevek();
+            datagridKutyanevek.ItemsSource = DbRepo.GetKutyanevek();
         }
 
-        private List<Kutyanev> GetKutyanevek()
+        
+
+        private void buttonUjkutyanev_Click(object sender, RoutedEventArgs e)
         {
-            List<Kutyanev> kutyanevek = new List<Kutyanev>();
+            EditKutyanev editKutyanev = new EditKutyanev();
+            editKutyanev.ShowDialog();
+        }
 
-            try
-            {
-                //kapcsolat->sql parancs->végrehajtás
-                using (SQLiteConnection connection=new SQLiteConnection(DbTools.connectionString))
-                {
-                    connection.Open();
-                    string sqlCommand = "select * from kutyanevek";
+        private void datagridKutyanevek_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var aktKutyanev=datagridKutyanevek.SelectedItem as Kutyanev;
 
-                    using (SQLiteCommand command=new SQLiteCommand(sqlCommand,connection))
-                    {
-                                                
-                        using (SQLiteDataReader reader=command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                Kutyanev kutyanev = new Kutyanev();
-                                kutyanev.Id = Convert.ToInt32(reader["Id"]);
-                                kutyanev.KutyaNev = reader["kutyanev"].ToString();
-                                kutyanevek.Add(kutyanev);
-                            }
-                        }
+            EditKutyanev editKutyanev=new EditKutyanev(aktKutyanev);
+            editKutyanev.ShowDialog();
 
-                    }
-
-                }
-            }
-            catch (SQLiteException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);                
-            }
-
-
-
-
-            return kutyanevek;
         }
     }
 }
