@@ -32,7 +32,7 @@ namespace WpfDbKutyak.Views
 
         private void buttonUjkutyanev_Click(object sender, RoutedEventArgs e)
         {
-            EditKutyanev editKutyanev = new EditKutyanev();
+            EditKutyanev editKutyanev = new EditKutyanev(this);
             editKutyanev.ShowDialog();
         }
 
@@ -40,9 +40,22 @@ namespace WpfDbKutyak.Views
         {
             var aktKutyanev=datagridKutyanevek.SelectedItem as Kutyanev;
 
-            EditKutyanev editKutyanev=new EditKutyanev(aktKutyanev);
+            EditKutyanev editKutyanev=new EditKutyanev(aktKutyanev,this);
             editKutyanev.ShowDialog();
 
+        }
+
+        private void buttonTorolkutyanev_Click(object sender, RoutedEventArgs e)
+        {
+            var aktKutyanev = datagridKutyanevek.SelectedItem as Kutyanev;
+
+            var valasz = MessageBox.Show("Biztosan törli?", "Törlés", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+
+            if (valasz == MessageBoxResult.OK)
+            {
+                DbRepo.TorolKutyanev(aktKutyanev.Id);
+                datagridKutyanevek.ItemsSource = DbRepo.GetKutyanevek();
+            }
         }
     }
 }

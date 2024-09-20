@@ -23,18 +23,23 @@ namespace WpfDbKutyak.Views
     {
         bool modosit = false;
         //Kutyanev aktKutyanev=new Kutyanev();
-        public EditKutyanev()
+        ViewKutyanev viewKutyanev;
+        public EditKutyanev(ViewKutyanev window)
         {
             InitializeComponent();
+            viewKutyanev = window;
         }
 
-        public EditKutyanev(Kutyanev kutyanev)
+        public EditKutyanev(Kutyanev kutyanev,ViewKutyanev window)
         {
             InitializeComponent();
             textblockFelirat.Text = "Kutyanév módosítás";
             textboxId.Text=kutyanev.Id.ToString();
             textboxKutyanev.Text = kutyanev.KutyaNev;
             //aktKutyanev = kutyanev;
+            viewKutyanev = window;
+            
+
             modosit = true;
         }
 
@@ -46,6 +51,8 @@ namespace WpfDbKutyak.Views
                     Id=Convert.ToInt32(textboxId.Text),
                     KutyaNev=textboxKutyanev.Text
                 });
+                viewKutyanev.datagridKutyanevek.ItemsSource = DbRepo.GetKutyanevek();
+                
 
             } else
             {
@@ -54,6 +61,7 @@ namespace WpfDbKutyak.Views
                     //Id = Convert.ToInt32(textboxId.Text),
                     KutyaNev = textboxKutyanev.Text
                 });
+                viewKutyanev.datagridKutyanevek.ItemsSource = DbRepo.GetKutyanevek();
             }
         }
 

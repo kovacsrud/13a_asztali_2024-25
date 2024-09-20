@@ -113,5 +113,34 @@ namespace WpfDbKutyak
                 MessageBox.Show(ex.Message, "Hiba!");
             }
         }
+
+        public static void TorolKutyanev(int id)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(DbTools.connectionString))
+                {
+                    connection.Open();
+                    string deleteCommand = "delete from kutyanevek where Id=@id";
+
+                    using (SQLiteCommand command = new SQLiteCommand(deleteCommand, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", id);
+                        
+                        var sorok = command.ExecuteNonQuery();
+                        MessageBox.Show($"{sorok}.sor törölve");
+                    }
+                    connection.Close();
+                }
+            }
+            catch (SQLiteException sqlex)
+            {
+                MessageBox.Show(sqlex.Message, "Adatbázis hiba!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hiba!");
+            }
+        }
     }
 }
