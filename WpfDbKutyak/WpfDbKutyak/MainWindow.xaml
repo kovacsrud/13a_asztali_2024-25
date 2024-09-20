@@ -26,7 +26,7 @@
             <MenuItem Header="Adatok">
                 <MenuItem x:Name="menuitemKutyanevek" Header="Kutyanevek" Click="menuitemKutyanevek_Click"/>
                 <MenuItem Header="Kutyafajták"/>
-                <MenuItem Header="Rendelési adatok"/>
+                <MenuItem x:Name="menuitemRendelesek" Header="Rendelési adatok" Click="menuitemRendelesek_Click"/>
             </MenuItem>
             <MenuItem Header="Súgó"></MenuItem>
         </Menu>

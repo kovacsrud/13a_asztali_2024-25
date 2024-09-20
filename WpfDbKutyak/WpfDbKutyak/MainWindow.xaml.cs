@@ -32,5 +32,11 @@ namespace WpfDbKutyak
             ViewKutyanev kutyanevek = new ViewKutyanev();
             kutyanevek.ShowDialog();
         }
+
+        private void menuitemRendelesek_Click(object sender, RoutedEventArgs e)
+        {
+            ViewRendeles rendelesek = new ViewRendeles();
+            rendelesek.ShowDialog();
+        }
     }
 }
