@@ -57,6 +57,52 @@ namespace WpfDbKutyak
             return kutyanevek;
         }
 
+        public static List<Kutyafajta> GetKutyafajtak()
+        {
+            List<Kutyafajta> kutyafajtak = new List<Kutyafajta>();
+
+            try
+            {
+                //kapcsolat->sql parancs->végrehajtás
+                using (SQLiteConnection connection = new SQLiteConnection(DbTools.connectionString))
+                {
+                    connection.Open();
+                    string sqlCommand = "select * from kutyafajtak";
+
+                    using (SQLiteCommand command = new SQLiteCommand(sqlCommand, connection))
+                    {
+
+                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Kutyafajta kutyafajta = new Kutyafajta();
+                                kutyafajta.Id = Convert.ToInt32(reader["Id"]);
+                                kutyafajta.Nev = reader["nev"].ToString();
+                                kutyafajta.EredetiNev = reader["eredetinev"].ToString();
+                                kutyafajtak.Add(kutyafajta);
+                            }
+                        }
+
+                    }
+
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+
+            return kutyafajtak;
+        }
+
         public static void UjKutyanev(Kutyanev kutyanev)
         {
             try

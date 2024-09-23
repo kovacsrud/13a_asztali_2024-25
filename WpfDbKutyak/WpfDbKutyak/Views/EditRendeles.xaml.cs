@@ -15,20 +15,17 @@ using System.Windows.Shapes;
 namespace WpfDbKutyak.Views
 {
     /// <summary>
-    /// Interaction logic for ViewRendeles.xaml
+    /// Interaction logic for EditRendeles.xaml
     /// </summary>
-    public partial class ViewRendeles : Window
+    public partial class EditRendeles : Window
     {
-        public ViewRendeles()
+        public EditRendeles()
         {
             InitializeComponent();
-            datagridRendeles.ItemsSource = DbRepo.GetRendelesiAdatok();
-        }
-
-        private void buttonUjRendeles_Click(object sender, RoutedEventArgs e)
-        {
-            EditRendeles rendeles=new EditRendeles();
-            rendeles.ShowDialog();
+            comboKutyanevek.ItemsSource = DbRepo.GetKutyanevek();
+            comboKutyanevek.SelectedIndex = 0;
+            comboKutyafajtak.ItemsSource = DbRepo.GetKutyafajtak();
+            comboKutyafajtak.SelectedIndex = 0;
         }
     }
 }
