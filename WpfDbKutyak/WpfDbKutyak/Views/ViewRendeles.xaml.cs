@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfDbKutyak.Model;
 
 namespace WpfDbKutyak.Views
 {
@@ -27,8 +28,24 @@ namespace WpfDbKutyak.Views
 
         private void buttonUjRendeles_Click(object sender, RoutedEventArgs e)
         {
-            EditRendeles rendeles=new EditRendeles();
+            EditRendeles rendeles=new EditRendeles(datagridRendeles);
             rendeles.ShowDialog();
+        }
+
+        private void datagridRendeles_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selected = datagridRendeles.SelectedItem as Rendeles;
+            EditRendeles rendeles = new EditRendeles(selected,datagridRendeles);
+            rendeles.ShowDialog();
+        }
+
+        private void buttonTorolRendeles_Click(object sender, RoutedEventArgs e)
+        {
+            var selected = datagridRendeles.SelectedItem as Rendeles;
+            if (selected != null) {
+                DbRepo.TorolRendeles(selected.Id);
+            }
+            datagridRendeles.ItemsSource = DbRepo.GetRendelesiAdatok();
         }
     }
 }

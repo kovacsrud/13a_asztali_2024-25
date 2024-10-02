@@ -12,7 +12,7 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="datagridRendeles" IsReadOnly="True" ColumnWidth="*" AutoGenerateColumns="False">
+        <DataGrid x:Name="datagridRendeles" IsReadOnly="True" ColumnWidth="*" AutoGenerateColumns="False" MouseDoubleClick="datagridRendeles_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Kutyanév" Binding="{Binding Nev}"/>
                 <DataGridTextColumn Header="Kutya fajtája" Binding="{Binding Fajta}"/>
@@ -22,7 +22,7 @@
         </DataGrid>
         <Button  x:Name="buttonUjRendeles" Content="Új rendelési adat" Grid.Row="1" Width="200" Height="30" FontSize="20" Click="buttonUjRendeles_Click"/>
 
-        <Button  x:Name="buttonTorolRendeles" Content="Törlés" Grid.Row="2" Width="200" Height="30" FontSize="20" />
+        <Button  x:Name="buttonTorolRendeles" Content="Törlés" Grid.Row="2" Width="200" Height="30" FontSize="20" Click="buttonTorolRendeles_Click"/>
 
 
     </Grid>

@@ -131,6 +131,38 @@ namespace WpfDbKutyak
             }
         }
 
+        public static void UjRendelesiAdat(Rendeles rendeles)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(DbTools.connectionString))
+                {
+                    connection.Open();
+                    string insertCommand = "insert into kutya (nevid,fajtaid,eletkor,utolsoell) values(@nevid,@fajtaid,@eletkor,@utolsoell)";
+
+                    using (SQLiteCommand command = new SQLiteCommand(insertCommand, connection))
+                    {
+                        command.Parameters.AddWithValue("@fajtaid", rendeles.FajtaId);
+                        command.Parameters.AddWithValue("@nevid", rendeles.NevId);
+                        command.Parameters.AddWithValue("@eletkor", rendeles.Eletkor);
+                        command.Parameters.AddWithValue("@utolsoell", rendeles.UtolsoEll);
+
+                        var sorok = command.ExecuteNonQuery();
+                        MessageBox.Show($"{sorok}.sor beszúrva");
+                    }
+                    connection.Close();
+                }
+            }
+            catch (SQLiteException sqlex)
+            {
+                MessageBox.Show(sqlex.Message, "Adatbázis hiba!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hiba!");
+            }
+        }
+
         public static void ModositKutyanev(Kutyanev kutyanev)
         {
             try
@@ -160,6 +192,39 @@ namespace WpfDbKutyak
             }
         }
 
+        public static void ModositRendelesiAdat(Rendeles rendeles)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(DbTools.connectionString))
+                {
+                    connection.Open();
+                    string updateCommand = "update kutya set fajtaid=@fajtaid,nevid=@nevid,eletkor=@eletkor,utolsoell=@utolsoell  where Id=@id";
+
+                    using (SQLiteCommand command = new SQLiteCommand(updateCommand, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", rendeles.Id);
+                        command.Parameters.AddWithValue("@fajtaid", rendeles.FajtaId);
+                        command.Parameters.AddWithValue("@nevid", rendeles.NevId);
+                        command.Parameters.AddWithValue("@eletkor", rendeles.Eletkor);
+                        command.Parameters.AddWithValue("@utolsoell", rendeles.UtolsoEll);
+
+                        var sorok = command.ExecuteNonQuery();
+                        MessageBox.Show($"{sorok}.sor módosítva");
+                    }
+                    connection.Close();
+                }
+            }
+            catch (SQLiteException sqlex)
+            {
+                MessageBox.Show(sqlex.Message, "Adatbázis hiba!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hiba!");
+            }
+        }
+
         public static void TorolKutyanev(int id)
         {
             try
@@ -173,6 +238,35 @@ namespace WpfDbKutyak
                     {
                         command.Parameters.AddWithValue("@id", id);
                         
+                        var sorok = command.ExecuteNonQuery();
+                        MessageBox.Show($"{sorok}.sor törölve");
+                    }
+                    connection.Close();
+                }
+            }
+            catch (SQLiteException sqlex)
+            {
+                MessageBox.Show(sqlex.Message, "Adatbázis hiba!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hiba!");
+            }
+        }
+
+        public static void TorolRendeles(int id)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(DbTools.connectionString))
+                {
+                    connection.Open();
+                    string deleteCommand = "delete from kutya where Id=@id";
+
+                    using (SQLiteCommand command = new SQLiteCommand(deleteCommand, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", id);
+
                         var sorok = command.ExecuteNonQuery();
                         MessageBox.Show($"{sorok}.sor törölve");
                     }
