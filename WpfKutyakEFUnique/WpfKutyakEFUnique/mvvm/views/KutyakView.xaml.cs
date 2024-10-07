@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfKutyakEFUnique.mvvm.viewmodels;
 
 namespace WpfKutyakEFUnique.mvvm.views
 {
@@ -19,9 +20,10 @@ namespace WpfKutyakEFUnique.mvvm.views
     /// </summary>
     public partial class KutyakView : Window
     {
-        public KutyakView()
+        public KutyakView(KutyaViewModel vm)
         {
             InitializeComponent();
+            DataContext = vm;
         }
     }
 }

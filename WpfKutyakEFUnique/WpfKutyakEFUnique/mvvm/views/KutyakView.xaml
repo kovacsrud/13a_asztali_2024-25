@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="KutyakView" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <DataGrid ItemsSource="{Binding Kutyak}" AutoGenerateColumns="False" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Fajta neve" Binding="{Binding Fajta.Nev}"/>
+                <DataGridTextColumn Header="Kutya neve" Binding="{Binding Nev.Kutyanev}"/>
+                <DataGridTextColumn Header="Életkor" Binding="{Binding Eletkor}" />
+                <DataGridTextColumn Header="Utolsó ellenőrzés" Binding="{Binding Utolsoell}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="buttonMentes" Content="Mentés" Width="200" Height="30" FontSize="18" Grid.Row="1"/>
+
     </Grid>
 </Window>
