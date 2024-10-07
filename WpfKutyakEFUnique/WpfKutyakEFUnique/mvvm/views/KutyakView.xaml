@@ -20,7 +20,7 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="buttonMentes" Content="Mentés" Width="200" Height="30" FontSize="18" Grid.Row="1"/>
+        <Button x:Name="buttonUj" Content="Új adat" Width="200" Height="30" FontSize="18" Grid.Row="1" Click="buttonUj_Click"/>
 
     </Grid>
 </Window>

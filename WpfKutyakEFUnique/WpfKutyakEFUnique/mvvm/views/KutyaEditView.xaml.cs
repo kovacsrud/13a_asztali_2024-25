@@ -16,21 +16,14 @@ using WpfKutyakEFUnique.mvvm.viewmodels;
 namespace WpfKutyakEFUnique.mvvm.views
 {
     /// <summary>
-    /// Interaction logic for KutyakView.xaml
+    /// Interaction logic for KutyaEditView.xaml
     /// </summary>
-    public partial class KutyakView : Window
+    public partial class KutyaEditView : Window
     {
-        public KutyakView(KutyaViewModel vm)
+        public KutyaEditView(KutyaViewModel vm)
         {
             InitializeComponent();
             DataContext = vm;
-        }
-
-        private void buttonUj_Click(object sender, RoutedEventArgs e)
-        {
-            var vm=DataContext as KutyaViewModel;
-            KutyaEditView kutyaEdit=new KutyaEditView(vm);
-            kutyaEdit.ShowDialog();
         }
     }
 }
