@@ -10,8 +10,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="9*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <DataGrid ItemsSource="{Binding Kutyak}" AutoGenerateColumns="False" ColumnWidth="*">
+        <DataGrid ItemsSource="{Binding Kutyak}" AutoGenerateColumns="False" ColumnWidth="*" SelectedItem="{Binding SelectedKutya}" MouseDoubleClick="DataGrid_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Fajta neve" Binding="{Binding Fajta.Nev}"/>
                 <DataGridTextColumn Header="Kutya neve" Binding="{Binding Nev.Kutyanev}"/>
@@ -21,6 +22,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="buttonUj" Content="Új adat" Width="200" Height="30" FontSize="18" Grid.Row="1" Click="buttonUj_Click"/>
+        <Button x:Name="buttonTorles" Content="Kijelölt törlése" Width="200" Height="30" FontSize="18" Grid.Row="2" Click="buttonTorles_Click"/>
 
     </Grid>
 </Window>

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfKutyakEFUnique.mvvm.models;
 using WpfKutyakEFUnique.mvvm.viewmodels;
 
 namespace WpfKutyakEFUnique.mvvm.views
@@ -20,10 +21,33 @@ namespace WpfKutyakEFUnique.mvvm.views
     /// </summary>
     public partial class KutyaEditView : Window
     {
-        public KutyaEditView(KutyaViewModel vm)
+        bool modosit = false;
+        public Kutya AktKutya { get; set; } = new Kutya();
+        public KutyaViewModel KutyaViewModel { get; set; }
+
+
+        public KutyaEditView(KutyaViewModel vm,bool modosit=false)
         {
             InitializeComponent();
-            DataContext = vm;
+            this.modosit = modosit;
+            KutyaViewModel = vm;
+            DataContext = this;
+
+            if (modosit) {
+                AktKutya = KutyaViewModel.SelectedKutya;
+            }
+        }
+
+        private void buttonMent_Click(object sender, RoutedEventArgs e)
+        {
+            if (modosit)
+            {
+                KutyaViewModel.DbMentes();
+            } else
+            {
+                KutyaViewModel.Kutyak.Add(AktKutya);
+                KutyaViewModel.DbMentes();
+            }
         }
     }
 }

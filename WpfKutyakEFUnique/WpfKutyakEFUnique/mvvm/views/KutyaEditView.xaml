@@ -15,11 +15,11 @@
             <RowDefinition Height="2*"/>
             
         </Grid.RowDefinitions>
-        <ComboBox ItemsSource="{Binding Kutyanevek}" DisplayMemberPath="Kutyanev" SelectedValuePath="Id" Width="200" Height="30" FontSize="16"/>
-        <ComboBox ItemsSource="{Binding Kutyafajtak}" DisplayMemberPath="Nev" SelectedValuePath="Id"  Width="200" Height="30" FontSize="16" Grid.Row="1"/>
-        <TextBox Width="500"  Height="30" FontSize="16" Grid.Row="2"/>
-        <TextBox Width="500"  Height="30" FontSize="16" Grid.Row="3"/>
-        <Button x:Name="buttonMent" Content="Mentés" Width="200" Height="30" FontSize="16" Grid.Row="4"/>
+        <ComboBox ItemsSource="{Binding KutyaViewModel.Kutyanevek}" DisplayMemberPath="Kutyanev" SelectedValuePath="Id" Width="200" Height="30" FontSize="16" SelectedIndex="0" SelectedItem="{Binding AktKutya.Nev}" SelectedValue="{Binding AktKutya.Nevid}"/>
+        <ComboBox ItemsSource="{Binding KutyaViewModel.Kutyafajtak}" DisplayMemberPath="Nev" SelectedValuePath="Id"  Width="200" Height="30" FontSize="16" Grid.Row="1" SelectedIndex="0" SelectedItem="{Binding AktKutya.Fajta}" SelectedValue="{Binding AktKutya.Fajtaid}"/>
+        <TextBox Text="{Binding AktKutya.Eletkor}" Width="500"  Height="30" FontSize="16" Grid.Row="2"/>
+        <TextBox Text="{Binding AktKutya.Utolsoell}" Width="500"  Height="30" FontSize="16" Grid.Row="3"/>
+        <Button x:Name="buttonMent" Content="Mentés" Width="200" Height="30" FontSize="16" Grid.Row="4" Click="buttonMent_Click"/>
 
     </Grid>
 </Window>

@@ -32,5 +32,23 @@ namespace WpfKutyakEFUnique.mvvm.views
             KutyaEditView kutyaEdit=new KutyaEditView(vm);
             kutyaEdit.ShowDialog();
         }
+
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //Módosítás
+            var vm = DataContext as KutyaViewModel;
+            KutyaEditView kutyaEdit = new KutyaEditView(vm,true);
+            kutyaEdit.ShowDialog();
+        }
+
+        private void buttonTorles_Click(object sender, RoutedEventArgs e)
+        {
+            var vm = DataContext as KutyaViewModel;
+            var valasz=MessageBox.Show("Biztosan törli?","Törlés",MessageBoxButton.OKCancel,MessageBoxImage.Question);
+            if (valasz == MessageBoxResult.OK && vm.SelectedKutya != null) { 
+                vm.Kutyak.Remove(vm.SelectedKutya);
+                vm.DbMentes();
+            }
+        }
     }
 }
