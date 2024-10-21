@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiStart.StartPage"
+             Title="StartPage">
+    <VerticalStackLayout>
+        <Label 
+            Text=".NET MAUI alapok"
+            FontSize="Header"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            x:Name="labelSzoveg"
+            Text=".NET MAUI alapok"
+            FontSize="Medium"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Entry x:Name="entrySzoveg" Text="default" WidthRequest="300"/>
+        <Button x:Name="buttonIr" Text="Írás" Margin="10" WidthRequest="300" Clicked="buttonIr_Clicked"/>
+    </VerticalStackLayout>
+    
+</ContentPage>
