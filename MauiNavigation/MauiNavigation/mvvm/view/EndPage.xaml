@@ -5,8 +5,13 @@
              Title="EndPage">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+                Text="EndPage"
+                FontSize="Large"
+                TextColor="Red"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+        
+        <Button x:Name="buttonVissza" Text="Vissza" Clicked="buttonVissza_Clicked"/>
+        <Button x:Name="buttonStartPage" Text="Kezdőlap" Clicked="buttonStartPage_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>

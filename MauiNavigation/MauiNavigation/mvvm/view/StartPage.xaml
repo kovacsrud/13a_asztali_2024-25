@@ -10,6 +10,10 @@
             TextColor="Red"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Label Text="Vezetéknév"/>
+        <Entry Text="{Binding Nev.Vezeteknev}" />
+        <Label Text="Keresztnév"/>
+        <Entry Text="{Binding Nev.Keresztnev}" />
         <Button x:Name="buttonTovabb" Text="Tovább" WidthRequest="200" Clicked="buttonTovabb_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>

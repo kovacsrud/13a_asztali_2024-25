@@ -5,7 +5,7 @@
              Title="MiddlePage">
     <VerticalStackLayout>
         <Label 
-     Text="StartPage"
+     Text="MiddlePage"
      FontSize="Large"
      TextColor="Red"
      VerticalOptions="Center" 
