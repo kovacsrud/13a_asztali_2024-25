@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCollection.Pages.ListaPage"
+             Title="ListaPage" BackgroundColor="{StaticResource Kek3}">
+
+    <Border Margin="10" VerticalOptions="FillAndExpand" Stroke="{StaticResource Kek1}" BackgroundColor="{StaticResource Kek2}" StrokeShape="RoundRectangle 40,0,0,40">
+        <Grid RowDefinitions=".1*,.2*,.5*,.2*">
+            <Label Text="Erőforrások" FontSize="Header" FontFamily="Mistral" TextColor="{StaticResource Vilagos}" HorizontalOptions="Center"/>
+            <Image Source="focus.jpg" Grid.Row="1" Margin="10"/>
+            <CollectionView x:Name="collectionHegyek" ItemsSource="{Binding .}" SelectionMode="Single" HorizontalOptions="Center" EmptyView="Az lista üres!" Grid.Row="2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Stroke="{StaticResource Kek3}" BackgroundColor="{StaticResource Kek1}" StrokeShape="RoundRectangle 10,10,10,10" Margin="10" Padding="5">
+                            <Grid ColumnDefinitions=".4*,.4*,.2*" Margin="5">
+                                <Label Text="{Binding HegyCsucsNeve}" VerticalOptions="Center" TextColor="{StaticResource Vilagos}"/>
+                                <Label Text="{Binding Hegyseg}" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" TextColor="{StaticResource Vilagos}"/>
+                                <Label Text="{Binding Magassag}" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource Vilagos}"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                
+            </CollectionView>
+            <VerticalStackLayout Grid.Row="3">
+                <Entry x:Name="entryMagassag"  TextColor="{StaticResource Vilagos}" Keyboard="Numeric"/>
+                <Button x:Name="buttonSzures" Margin="5" Text="Szűrés" WidthRequest="200" Clicked="buttonSzures_Clicked" BackgroundColor="{StaticResource Kek3}" />
+                <Button x:Name="buttonVissza" Margin="5" Text="Összes adat" WidthRequest="200" BackgroundColor="{StaticResource Kek3}" Clicked="buttonVissza_Clicked"/>
+
+            </VerticalStackLayout>
+
+        </Grid>
+    </Border>
+      
+    
+</ContentPage>
