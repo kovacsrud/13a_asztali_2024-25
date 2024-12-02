@@ -7,7 +7,37 @@
     <Border VerticalOptions="FillAndExpand" Margin="10" Stroke="{StaticResource RuStroke}" BackgroundColor="{StaticResource RuHatter}" StrokeShape="RoundRectangle 0,40,40,0" StrokeThickness="2">
         <Grid RowDefinitions=".2*,.7*,.1*">
             <Label Text="A felhasználók adatai:" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
-            <CollectionView x:Name="collectionUsers" Grid.Row="1" SelectionMode="Single">
+            <CollectionView x:Name="collectionUsers" Grid.Row="1" SelectionMode="Single" SelectionChanged="collectionUsers_SelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="2" BackgroundColor="{StaticResource RuStroke}" StrokeShape="RoundRectangle 80,80,80,80">
+
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal"></VisualState>
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="Black"/>
+                                            
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            
+                            <Grid ColumnDefinitions=".3*,.7*">
+                                <Border WidthRequest="80" HorizontalOptions="Start" StrokeShape="RoundRectangle 80,80,80,80" Margin="5">
+                                    <Image WidthRequest="80" HeightRequest="80" Source="{Binding picture.large}"/>
+                                </Border>
+                                <HorizontalStackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start">
+                                    <Label Text="{Binding name.title}" Margin="0,0,2,0" TextColor="White"/>
+                                    <Label Text="{Binding name.first}" Margin="0,0,2,0" TextColor="White"/>
+                                    <Label Text="{Binding name.last}" Margin="0,0,2,0" TextColor="White"/>
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                
                 
             </CollectionView>
             <Button Grid.Row="2" x:Name="buttonGetData" Text="Letöltés" BackgroundColor="{StaticResource RuButtonBg}" FontAttributes="Bold" Clicked="buttonGetData_Clicked"/>

@@ -10,7 +10,7 @@
         <Grid RowDefinitions=".3*,.6*,.1*">
             <Label Text="RandomUser" TextColor="White" FontSize="24" HorizontalOptions="Center" VerticalOptions="End"/>
             <Label Grid.Row="1" Text=".ME" FontSize="76" TextColor="White" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold"/>
-            <Button Grid.Row="2" x:Name="buttonStart" Text="Tovább" TextColor="White" BackgroundColor="{StaticResource RuButtonBg}"/>
+            <Button Grid.Row="2" x:Name="buttonStart" Text="Tovább" TextColor="White" BackgroundColor="{StaticResource RuButtonBg}" Clicked="buttonStart_Clicked"/>
         </Grid>
 
     </Border>
