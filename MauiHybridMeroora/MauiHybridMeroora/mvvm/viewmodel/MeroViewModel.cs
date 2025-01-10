@@ -2,6 +2,7 @@
 using PropertyChanged;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,6 +57,27 @@ namespace MauiHybridMeroora.mvvm.viewmodel
             catch (Exception ex)
             {
                 Application.Current.MainPage.DisplayAlert("Hiba", ex.Message, "Ok");
+            }
+
+        }
+        public async void TorolOraallas(MeroOra meroora)
+        {
+            try
+            {
+                var result = await Application.Current.MainPage.DisplayAlert("Törlés", "Biztosan törli?", "Igen", "Mégse");
+
+                if (result)
+                {
+                    App.MeroRepo.DeleteItem(meroora);
+                    await Application.Current.MainPage.DisplayAlert("Info", App.MeroRepo.StatusMsg, "Ok");
+                    Adatletoltes();
+                }
+
+                
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Hiba", ex.Message, "Ok");
             }
 
         }

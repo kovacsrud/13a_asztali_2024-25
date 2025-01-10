@@ -11,7 +11,7 @@
         <p class="card-text">Termelés: @OraAllas.Termeles</p>
         <p class="card-text">Fogyasztás: @OraAllas.Fogyasztas</p>
         <button class="btn btn-primary" @onclick="NavigateToModify">Módosítás</button>
-        <button class="btn btn-primary">Törlés</button>
+        <button class="btn btn-primary" @onclick="TorolOraallas">Törlés</button>
     </div>
 </div>
 
@@ -25,5 +25,11 @@
         vm.Modositas = true;
         vm.AktualisOraallas = OraAllas;
         NavigationManager.NavigateTo("/oraallasinput");
+    }
+
+    private void TorolOraallas()
+    {
+        vm.TorolOraallas(OraAllas);
+       
     }
 }
