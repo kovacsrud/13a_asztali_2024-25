@@ -1,0 +1,15 @@
+﻿@page "/oraallasok"
+@using MauiHybridMeroora.mvvm.viewmodel
+@inject MeroViewModel vm
+
+<h3 class="text-center font-bold">Óraállások</h3>
+
+    @foreach(var oraallas in vm.Oraallasok)
+    {
+        <Oraallas OraAllas="@oraallas" />
+    }
+
+
+@code {
+
+}

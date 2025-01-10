@@ -1,0 +1,29 @@
+﻿@using MauiHybridMeroora.mvvm.model
+@using MauiHybridMeroora.mvvm.viewmodel
+@inject MeroViewModel vm
+
+<div class="card m-2">
+    <div class="card-header">
+        @OraAllas.Datum
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Mérő adatok</h5>
+        <p class="card-text">Termelés: @OraAllas.Termeles</p>
+        <p class="card-text">Fogyasztás: @OraAllas.Fogyasztas</p>
+        <button class="btn btn-primary" @onclick="NavigateToModify">Módosítás</button>
+        <button class="btn btn-primary">Törlés</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public MeroOra OraAllas { get; set; } = default!;
+    [Inject] private NavigationManager NavigationManager { get; set; } = default!;
+
+    private void NavigateToModify()
+    {
+        vm.Modositas = true;
+        vm.AktualisOraallas = OraAllas;
+        NavigationManager.NavigateTo("/oraallasinput");
+    }
+}

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiHybridMeroora", "MauiHybridMeroora\MauiHybridMeroora.csproj", "{3C8050A9-C328-4624-8D70-167E9B2748FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C8050A9-C328-4624-8D70-167E9B2748FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C8050A9-C328-4624-8D70-167E9B2748FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C8050A9-C328-4624-8D70-167E9B2748FE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3C8050A9-C328-4624-8D70-167E9B2748FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C8050A9-C328-4624-8D70-167E9B2748FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C8050A9-C328-4624-8D70-167E9B2748FE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DFD37203-7C4C-43C5-A660-F0344CA45853}
+	EndGlobalSection
+EndGlobal

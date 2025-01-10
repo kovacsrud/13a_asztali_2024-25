@@ -1,0 +1,14 @@
+﻿@page "/lista"
+
+<h3 class="text-center">Lista</h3>
+<ul>
+    @foreach(var nev in NevLista)
+    {
+        <li>@nev</li>
+    }
+</ul>
+
+@code {
+    private List<string> NevLista = new() {"Elek","Ubul","Jolán","Ella","Zénó","Árpád","Mariann" };
+
+}

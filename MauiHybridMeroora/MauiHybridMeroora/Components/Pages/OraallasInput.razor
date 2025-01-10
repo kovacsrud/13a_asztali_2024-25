@@ -1,0 +1,46 @@
+﻿@page "/oraallasinput"
+@using MauiHybridMeroora.mvvm.model
+@using MauiHybridMeroora.mvvm.viewmodel
+@inject MeroViewModel vm;
+
+<h3 class="text-center">@Cim</h3>
+<div class="mb-3">
+    <label for="termeles" class="form-label">Termelés</label>
+    <input type="number" @bind="vm.AktualisOraallas.Termeles" class="form-control" id="termeles" placeholder="Termelés kw/h">
+    <label for="fogyasztas" class="form-label">Fogyasztás</label>
+    <input type="number" @bind="vm.AktualisOraallas.Fogyasztas" class="form-control" id="fogyasztas" placeholder="Fogyasztás kw/h">
+    <button @onclick="OraallasRogzit" class="btn btn-primary m-2">Rögzítés</button>
+</div>
+
+
+@code {
+    public string Cim { get; set; } = "Új óraállás";
+    [Inject] private NavigationManager NavigationManager { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+        if (vm.Modositas)
+        {
+            Cim = "Óraállás módosítása";
+        } else
+        {
+            vm.AktualisOraallas = new MeroOra { Termeles = 0, Fogyasztas = 0 };
+        }
+    }
+
+    private async void OraallasRogzit()
+    {
+        if (vm.Modositas)
+        {
+            vm.ModositOraallas(vm.AktualisOraallas);
+            vm.Modositas = false;
+            NavigationManager.NavigateTo("/oraallasok");
+
+        } else
+        {
+            vm.UjOraAllas(vm.AktualisOraallas);
+        }
+    }
+
+
+}

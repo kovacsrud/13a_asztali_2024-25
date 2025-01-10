@@ -1,0 +1,14 @@
+﻿@page "/bind"
+
+<h3>Adatkötés</h3>
+
+<input @bind="@Vezeteknev" @bind:event="oninput" />
+<input @bind="@Keresztnev" @bind:event="oninput" />
+<h4>@Vezeteknev</h4>
+<h4>@Keresztnev</h4>
+
+@code {
+    public string Vezeteknev { get; set; } = "Muhari";
+    public string Keresztnev { get; set; } = "Géza";
+
+}
