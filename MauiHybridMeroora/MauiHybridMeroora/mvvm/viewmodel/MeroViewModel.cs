@@ -12,7 +12,9 @@ namespace MauiHybridMeroora.mvvm.viewmodel
     [AddINotifyPropertyChangedInterface]
     public class MeroViewModel
     {
-        public List<MeroOra> Oraallasok { get; set; }=new List<MeroOra>();
+        public List<MeroOra> _Oraallasok { get; set; }=new List<MeroOra>();
+
+        public ObservableCollection<MeroOra> Oraallasok=new ObservableCollection<MeroOra>();
         public MeroOra AktualisOraallas { get; set; } = new MeroOra();
 
         public bool Modositas { get; set; } = false;
@@ -25,11 +27,21 @@ namespace MauiHybridMeroora.mvvm.viewmodel
             // UjOraAllas(ujadat2);
 
             Adatletoltes();
+
         }
+
+        public event Action? OnChange;
+
+        private void NotifyStateChanged() => OnChange?.Invoke();
 
         public void Adatletoltes()
         {
-            Oraallasok = App.MeroRepo.GetItems();
+            _Oraallasok = App.MeroRepo.GetItems();
+            Oraallasok.Clear();
+            foreach (var item in _Oraallasok)
+            {
+                Oraallasok.Add(item);
+            }
         }
 
         public void UjOraAllas(MeroOra meroora)
@@ -71,6 +83,7 @@ namespace MauiHybridMeroora.mvvm.viewmodel
                     App.MeroRepo.DeleteItem(meroora);
                     await Application.Current.MainPage.DisplayAlert("Info", App.MeroRepo.StatusMsg, "Ok");
                     Adatletoltes();
+                    NotifyStateChanged();
                 }
 
                 

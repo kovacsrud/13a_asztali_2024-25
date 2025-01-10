@@ -6,10 +6,19 @@
 
     @foreach(var oraallas in vm.Oraallasok)
     {
-        <Oraallas OraAllas="@oraallas" />
+        <Oraallas @key="oraallas.Id" OraAllas="@oraallas" />
     }
 
 
 @code {
+    protected override void OnInitialized()
+    {
+        vm.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        vm.OnChange -= StateHasChanged;
+    }
 
 }
