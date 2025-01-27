@@ -42,17 +42,7 @@ namespace BinFajlkezeles
                     Console.WriteLine($"Compression:{BitConverter.ToString(compression)}");
                     //00-04 seconds, 05-10 minute, 11-15 hour
                     var modtime = br.ReadBytes(2);
-                    var modtimeInt = BitConverter.ToUInt16(modtime);
-
-                    byte hour = (byte)(modtimeInt >> 12);
-
-                    ushort minute = (ushort)((modtimeInt >> 4) & 0b00001111);
-                    
-                    byte second = (byte)(modtimeInt << 12);
-                    
-                    Console.WriteLine($"Óra:{hour},Perc:{minute}, Másodperc:{second}");
-
-
+                   
 
                     Console.WriteLine($"Modtime:{BitConverter.ToString(modtime)}");
                     var moddate = br.ReadBytes(2);

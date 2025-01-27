@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinFajlkezeles", "BinFajlkezeles\BinFajlkezeles.csproj", "{510A9546-F776-40FA-961F-BCA044CD671D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinFajlkezeles", "BinFajlkezeles\BinFajlkezeles.csproj", "{510A9546-F776-40FA-961F-BCA044CD671D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SajatFormatum", "SajatFormatum\SajatFormatum.csproj", "{5FD7A81B-614A-49A5-891E-42335E0359C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SajatFormatum", "SajatFormatum\SajatFormatum.csproj", "{5FD7A81B-614A-49A5-891E-42335E0359C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bitmuveletek", "Bitmuveletek\Bitmuveletek.csproj", "{8FE051C8-A0E7-4B32-9482-C3ECA3D56584}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5FD7A81B-614A-49A5-891E-42335E0359C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FD7A81B-614A-49A5-891E-42335E0359C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FD7A81B-614A-49A5-891E-42335E0359C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FE051C8-A0E7-4B32-9482-C3ECA3D56584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FE051C8-A0E7-4B32-9482-C3ECA3D56584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FE051C8-A0E7-4B32-9482-C3ECA3D56584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FE051C8-A0E7-4B32-9482-C3ECA3D56584}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
