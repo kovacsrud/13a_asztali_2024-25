@@ -42,7 +42,8 @@ namespace Titkositas
             //Console.WriteLine(aes.KeySize);
             //Console.WriteLine(jelszoBin.Length*8);
             //Console.WriteLine(aes.IV.Length*8);
-            //Console.WriteLine(Encoding.UTF8.GetString(aes.IV));
+            Console.WriteLine(Encoding.UTF8.GetString(aes.IV));
+            Console.WriteLine($"Tartalom hash{Encoding.UTF8.GetString(tartalomHash)}");
 
             //A titkosított adat fájlba írása
             //Formátum a kódolt szöveg tárolásához
@@ -77,19 +78,55 @@ namespace Titkositas
 
             //Visszaolvasás
 
+            Console.WriteLine("-==========Visszaolvasás===========-");
+            byte[] titkositottFajl = File.ReadAllBytes("titkositott.bin");
+            byte[] dekodolni;
 
+            using (MemoryStream ms=new MemoryStream(titkositottFajl))
+            {
+                using (BinaryReader br=new BinaryReader(ms))
+                {
+                    byte[] IV = br.ReadBytes(16);
+                    Console.WriteLine(Encoding.UTF8.GetString(IV));
+                    byte[] fajlNevMeret= br.ReadBytes(4);
+                    Console.WriteLine(BitConverter.ToInt32(fajlNevMeret));
+                    byte[] fajlVisszaNev= br.ReadBytes(BitConverter.ToInt32(fajlNevMeret));
+                    Console.WriteLine(Encoding.UTF8.GetString(fajlVisszaNev));
+                    byte[] tartalomHashVissza= br.ReadBytes(32);
+                    Console.WriteLine(Encoding.UTF8.GetString(tartalomHashVissza));
+                    byte[] tartalomVisszaMeret= br.ReadBytes(4);
+                    Console.WriteLine(BitConverter.ToInt32(tartalomVisszaMeret));
+                    dekodolni= br.ReadBytes(BitConverter.ToInt32(tartalomVisszaMeret));
+                    
+                }
+            }
+
+            Console.WriteLine(dekodolni.Length);
 
             //Dekódolni a kódolt szöveget
-            //ICryptoTransform dekodolo = aes.CreateDecryptor(jelszoBin,aes.IV);
-            //byte[] dekodoltBin = dekodolo.TransformFinalBlock(titkositott,0,titkositott.Length);
+            ICryptoTransform dekodolo = aes.CreateDecryptor(jelszoBin,aes.IV);
+            byte[] dekodoltBin = dekodolo.TransformFinalBlock(dekodolni,0,dekodolni.Length);
 
-            //string dekodoltSzoveg = Encoding.UTF8.GetString(dekodoltBin);
-
-            //Console.WriteLine(dekodoltSzoveg);
+            string dekodoltSzoveg = Encoding.UTF8.GetString(dekodoltBin);
 
 
+            byte[] dekodoltHash = sha256.ComputeHash(Encoding.UTF8.GetBytes(dekodoltSzoveg));
+            Console.WriteLine($"Dekódolt szöveg hash:{Encoding.UTF8.GetString(dekodoltHash)}");
+
+            if (Encoding.UTF8.GetString(dekodoltHash) == Encoding.UTF8.GetString(tartalomHash))
+            {
+                Console.WriteLine("Megfelelő jelszó, sikeres dekódolás!");
+                Console.WriteLine(dekodoltSzoveg);
+            }
 
             
+
+
+
+
+
+
+
 
         }
     }
