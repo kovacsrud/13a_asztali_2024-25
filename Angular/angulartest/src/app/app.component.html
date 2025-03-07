@@ -1,0 +1,8 @@
+<app-header [headerSzoveg]="'Angular próba'" />
+<button class="btn btn-primary" (click)="katt()">Gomb</button>
+<h2 class="text-2xl text-center">{{headerSzoveg}}</h2>
+
+<app-lista />
+
+<app-posts />
+<router-outlet />

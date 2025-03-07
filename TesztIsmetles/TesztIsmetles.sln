@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesztIsmetles", "TesztIsmetles\TesztIsmetles.csproj", "{0B572FED-B542-4968-934D-0EE78F3B5B13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdoTest", "IdoTest\IdoTest.csproj", "{411A0531-A032-421E-94CC-2ADB0A74CEC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B572FED-B542-4968-934D-0EE78F3B5B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B572FED-B542-4968-934D-0EE78F3B5B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B572FED-B542-4968-934D-0EE78F3B5B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B572FED-B542-4968-934D-0EE78F3B5B13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{411A0531-A032-421E-94CC-2ADB0A74CEC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{411A0531-A032-421E-94CC-2ADB0A74CEC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{411A0531-A032-421E-94CC-2ADB0A74CEC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{411A0531-A032-421E-94CC-2ADB0A74CEC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAC01247-3902-42C8-9AA7-FB1C11DE6C55}
+	EndGlobalSection
+EndGlobal

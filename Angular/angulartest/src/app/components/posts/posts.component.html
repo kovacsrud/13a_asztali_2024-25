@@ -1,0 +1,16 @@
+<h1 class="text-3xl font-bold text-center text-sky-500">Posztok</h1>
+
+<ng-container *ngIf="isLoading;else postslist">
+    <h3 class="text-center text-3xl font-bold">Betöltés....</h3>
+</ng-container>
+
+
+
+<ng-template #postslist>
+    <ng-container *ngIf="posts.length>0">
+        <ng-container *ngFor="let post of posts">
+            <p class="m-5 font-bold">{{post.title}} ({{post.userId}})</p>
+            <p class="m-5 text-sky-600">{{post.body}}</p>
+        </ng-container>
+    </ng-container>
+</ng-template>

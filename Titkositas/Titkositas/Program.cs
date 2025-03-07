@@ -82,6 +82,9 @@ namespace Titkositas
             byte[] titkositottFajl = File.ReadAllBytes("titkositott.bin");
             byte[] dekodolni;
 
+            //Fájl formátum egyszerűsítve:
+            //IV 16byte//fájlnév hossza 4byte/eredeti fájlnév változó/tartalom hash -32 byte/tartalom hossza -4byte/tartalom -változó
+
             using (MemoryStream ms=new MemoryStream(titkositottFajl))
             {
                 using (BinaryReader br=new BinaryReader(ms))
