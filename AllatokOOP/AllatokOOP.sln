@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllatokOOP", "AllatokOOP\AllatokOOP.csproj", "{3F30A064-EA7B-4618-81AC-C598747EE522}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F30A064-EA7B-4618-81AC-C598747EE522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F30A064-EA7B-4618-81AC-C598747EE522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F30A064-EA7B-4618-81AC-C598747EE522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F30A064-EA7B-4618-81AC-C598747EE522}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D8087DB-13A6-447A-90E1-522376A6B180}
+	EndGlobalSection
+EndGlobal
